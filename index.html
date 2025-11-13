@@ -1,235 +1,175 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharePass | Deel memberships met een helder platform</title>
+  <title>SharePass | Share unused membership time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="#aanmelden" aria-label="SharePass start">
-        <span class="brand-icon" aria-hidden="true"></span>
-        <span class="brand-wordmark">SharePass</span>
-      </a>
-      <nav class="primary-nav" aria-label="Hoofdmenu">
-        <a href="#merk">Waarom SharePass</a>
-        <a href="#ervaring">Zo werkt het</a>
-        <a href="#getuigenissen">Stories</a>
-        <a href="#faq">FAQ</a>
+    <div class="container header-content">
+      <div class="logo">SharePass</div>
+      <nav class="header-actions" aria-label="Primary navigation">
+        <!-- TODO: Replace placeholder links with real routes once authentication is ready -->
+        <a href="#" class="link">Login</a>
+        <a href="#" class="link">Sign up</a>
       </nav>
-      <a class="btn outline" href="#aanmelden">Vraag early access aan</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="aanmelden">
-      <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Platform voor gedeelde locaties</span>
-          <h1>Één abonnement, veilig gedeeld met je hele team.</h1>
-          <p>SharePass is het operationele hart voor hosts die studio's, werkplekken en sportclubs verhuren aan meerdere teams. Je nodigt mensen uit, stelt toegang in en volgt gebruik zonder spreadsheets of losse apps.</p>
-          <ul class="hero-points">
-            <li><span aria-hidden="true">•</span> Deel digitale passen per locatie of team in seconden</li>
-            <li><span aria-hidden="true">•</span> Zie live wie er binnen is en waar capaciteit vrijkomt</li>
-            <li><span aria-hidden="true">•</span> Facturatie en rapportage automatisch geregeld</li>
-          </ul>
-          <div class="hero-actions">
-            <a class="btn solid" href="#ervaring">Bekijk producttour</a>
-            <a class="btn ghost" href="#merk">Waarom teams kiezen voor SharePass</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 id="hero-title">SharePass</h1>
+          <p class="hero-subtitle">Share your unused membership time and earn money – or book cheap one-time access.</p>
+          <div class="cta-buttons">
+            <button class="btn primary" id="cta-membership" type="button">I HAVE A MEMBERSHIP</button>
+            <button class="btn secondary" id="cta-booking" type="button">I WANT TO BOOK ACCESS</button>
           </div>
-          <form class="lead-form" aria-label="Laat je e-mail achter voor vroege toegang">
-            <label class="sr-only" for="lead-email">E-mailadres</label>
-            <input id="lead-email" type="email" name="email" placeholder="Jouw e-mailadres" required>
-            <button class="btn solid" type="submit">Ontvang invite</button>
-            <p class="form-helper">Binnen 24 uur een korte demo en toegang tot onze onboarding checklist.</p>
-          </form>
         </div>
-        <aside class="hero-showcase" aria-label="Voorbeeld platform">
-          <div class="dashboard-preview" role="img" aria-label="Voorbeeld van het SharePass dashboard">
-            <div class="preview-header">
-              <span class="status">Team Space</span>
-              <span class="timestamp">Vandaag, 11:45</span>
-            </div>
-            <div class="preview-body">
-              <div class="preview-card">
-                <strong>Glow Studio</strong>
-                <span>Vier reserveringen deze week</span>
-                <p>12 leden hebben toegang</p>
-              </div>
-              <div class="preview-list">
-                <h2>Toegang deze week</h2>
-                <ul>
-                  <li><span>Ma 09:00</span><strong>Emma Jansen</strong><span class="badge">Binnen</span></li>
-                  <li><span>Ma 10:30</span><strong>Liam Vermeer</strong><span class="badge neutral">Verwacht</span></li>
-                  <li><span>Di 08:15</span><strong>Sofia Bakker</strong><span class="badge">Binnen</span></li>
-                  <li><span>Di 12:00</span><strong>Team Flex BV</strong><span class="badge neutral">Gereserveerd</span></li>
-                </ul>
-              </div>
-            </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-dashboard">
+            <span class="label">Next available slots</span>
+            <ul>
+              <li>
+                <strong>Glow Gym – Today</strong>
+                <span>17:00 – 18:30</span>
+              </li>
+              <li>
+                <strong>City Spa – Tomorrow</strong>
+                <span>09:00 – 12:00</span>
+              </li>
+              <li>
+                <strong>Padel Club – Saturday</strong>
+                <span>10:00 – 11:00</span>
+              </li>
+            </ul>
+            <p class="note">Future live data will appear here.</p>
           </div>
-          <div class="metrics" aria-label="Resultaten">
-            <div class="metric">
-              <strong>30%</strong>
-              <span>Minder ongebruikte uren</span>
-            </div>
-            <div class="metric">
-              <strong>2 min</strong>
-              <span>Gemiddelde check-in tijd</span>
-            </div>
-            <div class="metric">
-              <strong>98%</strong>
-              <span>Tevredenheid leden</span>
-            </div>
-          </div>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <section class="brand-identity" id="merk">
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
       <div class="container">
-        <header class="section-heading">
-          <span class="eyebrow">Waarom hosts voor SharePass kiezen</span>
-          <h2>Grip op gedeelde memberships zonder extra werk</h2>
-          <p>SharePass vervangt losse spreadsheets, toegangstags en betaalverzoeken. Het platform geeft hosts en operations-teams één overzicht van passen, aanwezigheid en opbrengsten.</p>
-        </header>
-        <div class="pillar-grid">
-          <article class="pillar-card">
-            <h3>Duidelijke toegang</h3>
-            <p>Stel per ruimte vast wie wanneer naar binnen mag. SharePass verstuurt uitnodigingen, herinnert leden automatisch en logt elke check-in.</p>
+        <h2 id="how-title">How it works</h2>
+        <div class="how-grid">
+          <article class="how-card" id="members-flow" aria-labelledby="members-title">
+            <h3 id="members-title">For Members</h3>
+            <ol>
+              <li>Upload your membership details &amp; verify</li>
+              <li>Choose when you don’t use it</li>
+              <li>Earn money when someone books your slot</li>
+            </ol>
           </article>
-          <article class="pillar-card">
-            <h3>Transparante inkomsten</h3>
-            <p>Je ziet per lid, team of organisatie wat er verbruikt is en wat er gefactureerd wordt. Rapportages sluiten aan op je boekhouding en HR-processen.</p>
-          </article>
-          <article class="pillar-card">
-            <h3>Implementatie met support</h3>
-            <p>Ons team helpt bij de start, verzorgt training voor hosts en zorgt dat je ledenbestand netjes wordt overgezet. Zo kun je direct live.</p>
+          <article class="how-card" id="renters-flow" aria-labelledby="renters-title">
+            <h3 id="renters-title">For Renters</h3>
+            <ol>
+              <li>Pick a gym / club near you</li>
+              <li>Choose a time slot</li>
+              <li>Pay and get a QR code to show at the location</li>
+            </ol>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="experience" id="ervaring">
-      <div class="container">
-        <header class="section-heading">
-          <span class="eyebrow">Productervaring</span>
-          <h2>Zo loopt een gedeeld membership met SharePass</h2>
-          <p>Elke stap — van aanmelden tot facturatie — zit in dezelfde workflow. Jij bepaalt de regels en SharePass automatiseert de rest.</p>
-        </header>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <span class="step">01</span>
-            <h3>Uitnodigen &amp; toewijzen</h3>
-            <p>Nodig teams en freelancers uit met digitale passen. Stel per locatie beschikbaarheid en toegangsmomenten in.</p>
-          </article>
-          <article class="experience-card">
-            <span class="step">02</span>
-            <h3>Beschikbaarheid beheren</h3>
-            <p>Open vaste blokken of losse uren. Leden reserveren in een heldere interface en ontvangen bevestigingen per e-mail.</p>
-          </article>
-          <article class="experience-card">
-            <span class="step">03</span>
-            <h3>Check-in zonder frictie</h3>
-            <p>Digitale passen werken met QR en NFC. Hosts zien live wie er binnen is, wat de status is en of er plekken vrij komen.</p>
-          </article>
-          <article class="experience-card">
-            <span class="step">04</span>
-            <h3>Inzicht en rapportage</h3>
-            <p>Rapportages voor finance en verhuurders staan klaar. Facturen en vergoedingen worden automatisch verstuurd volgens jouw instellingen.</p>
-          </article>
+    <section class="owner-flow" aria-labelledby="owner-title">
+      <div class="container flow-container">
+        <div class="flow-text">
+          <h2 id="owner-title">Offer your membership time slots</h2>
+          <p>Turn unused hours into extra income by sharing them safely with the SharePass community.</p>
+          <!-- TODO: Implement onboarding wizard for owners -->
+        </div>
+        <div class="flow-placeholder">
+          <p class="placeholder-heading">Owner dashboard preview</p>
+          <p class="placeholder-text">Soon this space will show analytics about your shared time slots.</p>
         </div>
       </div>
     </section>
 
-    <section class="stories" id="getuigenissen">
-      <div class="container">
-        <header class="section-heading">
-          <span class="eyebrow">Community stories</span>
-          <h2>Wat klanten zeggen over SharePass</h2>
-        </header>
-        <div class="story-grid">
-          <article class="story-card">
-            <div class="rating" aria-hidden="true">★★★★★</div>
-            <p>“Reserveringen gaan sneller door omdat we alles in één overzicht hebben. Ons team deelt nu zonder spreadsheets.”</p>
-            <footer>
-              <strong>Mia, Rotterdam</strong>
-              <span>Eigenaar Glow Studio</span>
-            </footer>
-          </article>
-          <article class="story-card">
-            <div class="rating" aria-hidden="true">★★★★★</div>
-            <p>“Check-ins duren letterlijk een paar seconden. Leden houden hun telefoon bij de scanner en wij zien direct status.”</p>
-            <footer>
-              <strong>Karim, Utrecht</strong>
-              <span>Community host</span>
-            </footer>
-          </article>
-          <article class="story-card">
-            <div class="rating" aria-hidden="true">★★★★☆</div>
-            <p>“De rapportages sluiten aan op onze boekhouding. Facturen worden automatisch verstuurd naar de juiste budgetcodes.”</p>
-            <footer>
-              <strong>Lotte, Amsterdam</strong>
-              <span>Operations lead FlexCo</span>
-            </footer>
-          </article>
+    <section class="renter-flow" aria-labelledby="renter-title">
+      <div class="container flow-container">
+        <div class="flow-text">
+          <h2 id="renter-title">Book a one-time access</h2>
+          <p>Find flexible access to gyms, wellness, padel courts, coworking, and more without a full subscription.</p>
+          <!-- TODO: Fetch available time slots from backend -->
+        </div>
+        <div class="flow-placeholder">
+          <p class="placeholder-heading">Future booking list</p>
+          <p class="placeholder-text">Filters, search, and reviews will appear here.</p>
         </div>
       </div>
     </section>
 
-    <section class="faq" id="faq">
+    <section class="time-slots" aria-labelledby="slots-title">
       <div class="container">
-        <header class="section-heading">
-          <span class="eyebrow">Veelgestelde vragen</span>
-          <h2>Alles over het delen van memberships</h2>
-        </header>
-        <div class="faq-list">
-          <details>
-            <summary>Welke tools zijn inbegrepen?</summary>
-            <p>Je krijgt toegang tot het SharePass dashboard, mobiele passen, reserveringsbeheer en integraties met Google Calendar en Slack.</p>
-          </details>
-          <details>
-            <summary>Hoe blijft het platform veilig?</summary>
-            <p>We gebruiken tweestapsverificatie, versleutelde passen en realtime logs zodat je altijd weet wie toegang heeft gehad.</p>
-          </details>
-          <details>
-            <summary>Kun je bestaande leden importeren?</summary>
-            <p>Ja, via CSV of een directe koppeling met je huidige ledenadministratie. Ons team helpt je om data netjes over te zetten.</p>
-          </details>
-          <details>
-            <summary>Helpen jullie met implementatie?</summary>
-            <p>We bieden onboarding calls, trainingsmateriaal voor hosts en jaarlijkse account reviews om je setup te optimaliseren.</p>
-          </details>
+        <h2 id="slots-title">Example time slots</h2>
+        <div class="card-grid">
+          <article class="slot-card">
+            <h3>Basic-Fit Groningen</h3>
+            <p class="slot-time">Tonight 18:00–19:30</p>
+            <p class="slot-price">€4</p>
+            <button class="btn tertiary book-button" type="button" data-slot="Basic-Fit Groningen">Book now</button>
+          </article>
+          <article class="slot-card">
+            <h3>Padel Club Utrecht</h3>
+            <p class="slot-time">Saturday 10:00–11:00</p>
+            <p class="slot-price">€6</p>
+            <button class="btn tertiary book-button" type="button" data-slot="Padel Club Utrecht">Book now</button>
+          </article>
+          <article class="slot-card">
+            <h3>Wellness Rotterdam</h3>
+            <p class="slot-time">Sunday 14:00–18:00</p>
+            <p class="slot-price">€15</p>
+            <button class="btn tertiary book-button" type="button" data-slot="Wellness Rotterdam">Book now</button>
+          </article>
+        </div>
+        <!-- TODO: Replace hardcoded slots with dynamic rendering -->
+      </div>
+    </section>
+
+    <section class="why-sharepass" aria-labelledby="why-title">
+      <div class="container">
+        <h2 id="why-title">Why SharePass?</h2>
+        <div class="card-grid benefits">
+          <article class="benefit-card">
+            <h3>Save money</h3>
+            <p>No full subscription needed — pay only for the time you use.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Earn from unused time</h3>
+            <p>Share empty slots and get paid effortlessly.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Flexible access</h3>
+            <p>Book when it suits you and explore new locations.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Win-win</h3>
+            <p>Maximize the value of memberships already in circulation.</p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="cta-ribbon" role="complementary">
-    <p>Plan een demo en zie binnen 15 minuten hoe SharePass gedeelde toegang regelt.</p>
-    <a class="btn solid" href="#aanmelden">Vraag demo aan</a>
-  </div>
-
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="#aanmelden">
-          <span class="brand-icon" aria-hidden="true"></span>
-          <span class="brand-wordmark">SharePass</span>
-        </a>
-        <p class="footer-copy">© 2024 SharePass. Software voor eerlijk gedeelde memberships.</p>
-      </div>
-      <nav aria-label="Footer links">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> SharePass. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer">
         <a href="#">Privacy</a>
-        <a href="#">Voorwaarden</a>
-        <a href="#">Brand portal</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
       </nav>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
