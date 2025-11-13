@@ -3,199 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharePass | Deel ongebruikte abonnementstijd</title>
+  <title>SharePass | Deel onbeperkte toegang met een nieuw merkverhaal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top-bar">
-    <div class="container">
-      <div class="logo">SharePass</div>
-      <nav class="nav-links">
-        <a href="#hoe-het-werkt">Hoe het werkt</a>
-        <a href="#tijdslots">Tijdslots</a>
-        <a href="#waarom">Waarom SharePass?</a>
-        <a href="#getuigenissen">Reviews</a>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="#aanmelden" aria-label="SharePass start">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span class="brand-wordmark">SharePass</span>
+      </a>
+      <nav class="primary-nav" aria-label="Hoofdmenu">
+        <a href="#merk">Merkidentiteit</a>
+        <a href="#ervaring">Productervaring</a>
+        <a href="#visuals">Visuele taal</a>
+        <a href="#getuigenissen">Stories</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="cta" href="#aanmelden">Start nu</a>
+      <a class="btn outline" href="#aanmelden">Vraag early access aan</a>
     </div>
   </header>
 
   <main>
     <section class="hero" id="aanmelden">
-      <div class="container">
-        <div class="hero-content">
-          <span class="badge">Nieuw platform</span>
-          <h1>Haal meer uit elke minuut van je abonnement</h1>
-          <p>SharePass verbindt abonnementhouders met mensen die flexibel toegang willen tot sportscholen, wellness en coworking-ruimtes. Verdien bij of boek voordelig wanneer het jou uitkomt.</p>
-          <ul class="hero-benefits">
-            <li><span aria-hidden="true">✔</span> Binnen 2 minuten jouw tijdslot live</li>
-            <li><span aria-hidden="true">✔</span> Beveiligde betalingen & identiteitscontrole</li>
-            <li><span aria-hidden="true">✔</span> Geen langlopende verplichtingen</li>
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">SharePass Flow™ merkidentiteit</span>
+          <h1>Deel toegang. Vergroot impact.</h1>
+          <p>SharePass verbindt bezitters van membership-toegang met een community die flexibiliteit zoekt. Onze nieuwe identiteit draait om vertrouwen, ritme en vooruitgang &mdash; ontworpen om naadloos te werken in product, marketing en community-events.</p>
+          <ul class="hero-points">
+            <li><span aria-hidden="true">✶</span> Vertrouwde digitale pas met realtime verificatie</li>
+            <li><span aria-hidden="true">✶</span> Modulair design system voor web, app en print</li>
+            <li><span aria-hidden="true">✶</span> Heldere merkstem met focus op collectieve winst</li>
           </ul>
           <div class="hero-actions">
-            <a class="btn primary" href="#verhuurders">Ik heb een abonnement</a>
-            <a class="btn secondary" href="#huurders">Ik wil toegang boeken</a>
+            <a class="btn solid" href="#ervaring">Ontdek de ervaring</a>
+            <a class="btn ghost" href="#visuals">Bekijk de stijlguide</a>
           </div>
           <form class="lead-form" aria-label="Laat je e-mail achter voor vroege toegang">
             <label class="sr-only" for="lead-email">E-mailadres</label>
-            <input id="lead-email" type="email" name="email" placeholder="Vul je e-mail in" required>
-            <button class="btn primary" type="submit">Ontvang invite</button>
-            <p class="form-helper">Geen spam. We mailen alleen wanneer je kunt starten.</p>
+            <input id="lead-email" type="email" name="email" placeholder="Jouw e-mailadres" required>
+            <button class="btn solid" type="submit">Ontvang invite</button>
+            <p class="form-helper">We sturen uitsluitend updates over lancering en merkassets.</p>
           </form>
         </div>
-        <div class="hero-visual">
-          <div class="card">
-            <h3>Voorbeeld boeking</h3>
-            <p class="time">Zaterdag 10:00 - 12:00</p>
-            <p class="location">Urban Fitness, Amsterdam</p>
-            <div class="avatars">
-              <span class="avatar">JD</span>
-              <span class="avatar">MV</span>
-              <span class="avatar">LS</span>
+        <aside class="hero-showcase" aria-label="Voorbeeld merktoepassing">
+          <div class="showcase-card">
+            <span class="status">Live badge</span>
+            <h2>Community Flow Event</h2>
+            <p class="time">Don 12 sept &bull; 18:30 - 21:00</p>
+            <p class="location">Glow Studio, Rotterdam</p>
+            <div class="avatars" aria-label="Aanwezige hosts">
+              <span class="avatar" aria-hidden="true">EL</span>
+              <span class="avatar" aria-hidden="true">KV</span>
+              <span class="avatar" aria-hidden="true">MS</span>
             </div>
-            <p class="status">Nog 2 plekken beschikbaar</p>
+            <p class="note">Tonen bij entree voor directe check-in via SharePass.</p>
           </div>
-          <div class="trust-signals" aria-label="Vertrouwen en sociale bewijskracht">
+          <div class="metrics" aria-label="Resultaten">
             <div class="metric">
-              <strong>4.8/5</strong>
-              <span>Gemiddelde beoordeling</span>
-            </div>
-            <div class="metric">
-              <strong>1.200+</strong>
-              <span>Gedeelde tijdslots</span>
+              <strong>82%</strong>
+              <span>Hogere benutting memberships</span>
             </div>
             <div class="metric">
-              <strong>24/7</strong>
-              <span>Community support</span>
+              <strong>48 uur</strong>
+              <span>Uitbetaling verhuurders</span>
+            </div>
+            <div class="metric">
+              <strong>+120</strong>
+              <span>Actieve steden in Europa</span>
             </div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <section class="steps" id="hoe-het-werkt">
+    <section class="brand-identity" id="merk">
       <div class="container">
-        <h2>Hoe het werkt</h2>
-        <div class="steps-grid">
-          <div class="step" id="verhuurders">
-            <span class="step-number">1</span>
-            <h3>Deel je vrije tijd</h3>
-            <p>Maak een listing voor de tijdslots waarop jij je abonnement niet gebruikt en bepaal je eigen prijs.</p>
-          </div>
-          <div class="step" id="huurders">
-            <span class="step-number">2</span>
-            <h3>Kies een slot</h3>
-            <p>Zoek op locatie, activiteit en tijd. Kies een passend tijdslot en boek direct.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Check-in & geniet</h3>
-            <p>Huurders ontvangen een digitale pass. Verhuurders krijgen uitbetaald na het slot.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slots" id="tijdslots">
-      <div class="container">
-        <h2>Voorbeeld tijdslots</h2>
-        <div class="slot-grid">
-          <article class="slot-card">
-            <h3>City Gym - Rotterdam</h3>
-            <p class="time">Maandag 18:00 - 20:00</p>
-            <p class="price">€8 per sessie</p>
-            <p class="details">Inclusief gebruik van sauna en groepsles.</p>
-            <button class="btn tertiary">Boek nu</button>
+        <header class="section-heading">
+          <span class="eyebrow">Merkkompas</span>
+          <h2>Een merk gebouwd op collectieve beweging</h2>
+          <p>Onze identiteit is gebaseerd op flow: het ritme waarin toegang gedeeld wordt, waarde groeit en iedereen meedeelt. De huisstijl vertaalt dit naar dynamische vormen, contrasterende kleuren en een heldere toon.</p>
+        </header>
+        <div class="pillar-grid">
+          <article class="pillar-card">
+            <h3>Collectieve flow</h3>
+            <p>We benadrukken samenwerking boven individuele winst. Stralende gradients en overlappende vormen symboliseren de verbonden community van hosts en gasten.</p>
           </article>
-          <article class="slot-card">
-            <h3>Wellness Spa - Utrecht</h3>
-            <p class="time">Woensdag 10:00 - 14:00</p>
-            <p class="price">€15 per slot</p>
-            <p class="details">Ontspan in de sauna en float ruimtes.</p>
-            <button class="btn tertiary">Boek nu</button>
+          <article class="pillar-card">
+            <h3>Radicale transparantie</h3>
+            <p>Duidelijke prijzen, betrouwbare verificatie en zichtbare statusindicatoren scheppen vertrouwen in elke interactie, online en on-site.</p>
           </article>
-          <article class="slot-card">
-            <h3>Padel Club - Eindhoven</h3>
-            <p class="time">Vrijdag 19:00 - 21:00</p>
-            <p class="price">€12 per baan</p>
-            <p class="details">Inclusief racket en ballen.</p>
-            <button class="btn tertiary">Boek nu</button>
-          </article>
-          <article class="slot-card">
-            <h3>Cowork Hub - Amsterdam</h3>
-            <p class="time">Dinsdag 09:00 - 17:00</p>
-            <p class="price">€20 per dag</p>
-            <p class="details">Focuszones, snelle wifi en koffie inbegrepen.</p>
-            <button class="btn tertiary">Boek nu</button>
-          </article>
-          <article class="slot-card">
-            <h3>Yoga Loft - Den Haag</h3>
-            <p class="time">Zondag 08:00 - 10:00</p>
-            <p class="price">€10 per sessie</p>
-            <p class="details">Vinyasa flow les met max 12 deelnemers.</p>
-            <button class="btn tertiary">Boek nu</button>
-          </article>
-          <article class="slot-card">
-            <h3>Surf House - Scheveningen</h3>
-            <p class="time">Zaterdag 14:00 - 16:00</p>
-            <p class="price">€18 per sessie</p>
-            <p class="details">Inclusief wetsuit en board.</p>
-            <button class="btn tertiary">Boek nu</button>
+          <article class="pillar-card">
+            <h3>Toegang als service</h3>
+            <p>We presenteren SharePass als een service die mee beweegt met agenda's. Flexibele componenten maken het eenvoudig om nieuwe aanbodcategorieën te lanceren.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="why" id="waarom">
+    <section class="experience" id="ervaring">
       <div class="container">
-        <h2>Waarom SharePass?</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <h3>Maximaliseer waarde</h3>
-            <p>Verhuurders verdienen extra aan ongebruikte tijd, terwijl huurders premium ervaringen krijgen zonder langlopende contracten.</p>
+        <header class="section-heading">
+          <span class="eyebrow">Productervaring</span>
+          <h2>Een klantreis die elke stap begeleidt</h2>
+          <p>Van onboarding tot check-out zorgen we voor heldere contactmomenten, ondersteund door micro-copy en herkenbare visuals.</p>
+        </header>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <span class="step">01</span>
+            <h3>Flow onboarding</h3>
+            <p>Gestroomlijnde registratie met progress-indicatoren en realtime verificatie zorgt voor vertrouwen zonder frictie.</p>
+          </article>
+          <article class="experience-card">
+            <span class="step">02</span>
+            <h3>Dynamische tijdslots</h3>
+            <p>Kaarten met kleurcoderingen voor beschikbaarheid, inclusief suggesties op basis van locatie, mood en activiteit.</p>
+          </article>
+          <article class="experience-card">
+            <span class="step">03</span>
+            <h3>Check-in moments</h3>
+            <p>Digitale pas met bewegende gradient en NFC. Hosts zien in één oogopslag status, feedback en community-score.</p>
+          </article>
+          <article class="experience-card">
+            <span class="step">04</span>
+            <h3>Community loops</h3>
+            <p>Na elke ervaring activeren we delen van highlights en rating prompts om sociale bewijskracht te vergroten.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-language" id="visuals">
+      <div class="container">
+        <header class="section-heading">
+          <span class="eyebrow">Visuele taal</span>
+          <h2>Van kleurpalet tot grafische elementen</h2>
+          <p>De SharePass Flow-stijl combineert zachte achtergrondlagen met levendige accenten en geometrische vormen geïnspireerd op stadsplattegronden.</p>
+        </header>
+        <div class="visual-grid">
+          <div class="palette">
+            <h3>Kleurenpalet</h3>
+            <ul>
+              <li style="--swatch:#0f172a"><span class="swatch"></span><div><strong>Midnight Ink</strong><small>#0F172A</small></div></li>
+              <li style="--swatch:#2563eb"><span class="swatch"></span><div><strong>Motion Blue</strong><small>#2563EB</small></div></li>
+              <li style="--swatch:#22d3ee"><span class="swatch"></span><div><strong>Tidal Cyan</strong><small>#22D3EE</small></div></li>
+              <li style="--swatch:#f97316"><span class="swatch"></span><div><strong>Pulse Coral</strong><small>#F97316</small></div></li>
+              <li style="--swatch:#f1f5f9"><span class="swatch"></span><div><strong>Cloud Light</strong><small>#F1F5F9</small></div></li>
+            </ul>
           </div>
-          <div class="why-card">
-            <h3>Transparante transacties</h3>
-            <p>Veilige betalingen en directe bevestiging met een eerlijke transactievergoeding voor SharePass.</p>
+          <div class="typography">
+            <h3>Typografie</h3>
+            <div class="type-card">
+              <span class="type-label">Headlines</span>
+              <p class="type-example">Manrope ExtraBold 72/110%</p>
+            </div>
+            <div class="type-card">
+              <span class="type-label">Body &amp; UI</span>
+              <p class="type-example">IBM Plex Sans Medium 18/150%</p>
+            </div>
+            <p class="type-note">We combineren afgeronde lettervormen met heldere spacing voor een evenwichtige mix van digital-first en menselijk.</p>
           </div>
-          <div class="why-card">
-            <h3>Flexibel en lokaal</h3>
-            <p>Boek in jouw stad, op tijden die passen bij je agenda. Deel de toegang met je community.</p>
+          <div class="motifs">
+            <h3>Grafische elementen</h3>
+            <ul>
+              <li><span aria-hidden="true">▰</span> Motion waves: diagonale banen die flow visualiseren.</li>
+              <li><span aria-hidden="true">◒</span> Orbit badges: cirkelvormige labels voor status en events.</li>
+              <li><span aria-hidden="true">▱</span> Stack cards: verhoogde panelen voor informatiehiërarchie.</li>
+            </ul>
+            <p>Deze elementen zijn beschikbaar als Figma-componenten en exporteerbare SVG's voor sociale media en print.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="testimonials" id="getuigenissen">
+    <section class="stories" id="getuigenissen">
       <div class="container">
-        <h2>Wat anderen zeggen</h2>
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>"Ik verhuur nu drie vaste tijdslots van mijn sportschoolabonnement. Binnen een week had ik al mijn maandkosten terugverdiend."</p>
+        <header class="section-heading">
+          <span class="eyebrow">Community stories</span>
+          <h2>Wat leden zeggen over de nieuwe SharePass-look</h2>
+        </header>
+        <div class="story-grid">
+          <article class="story-card">
+            <div class="rating" aria-hidden="true">★★★★★</div>
+            <p>“De nieuwe visuals geven ons studio-event meteen uitstraling. Gasten herkennen de Flow-badge en vertrouwen het proces.”</p>
             <footer>
-              <strong>Sanne, Amsterdam</strong>
-              <span>Deelt een premium gym membership</span>
+              <strong>Mia, Rotterdam</strong>
+              <span>Eigenaar Glow Studio</span>
             </footer>
           </article>
-          <article class="testimonial-card">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>"Handig om ad-hoc een werkplek te vinden. Ik hou van de transparante prijzen en directe bevestiging."</p>
+          <article class="story-card">
+            <div class="rating" aria-hidden="true">★★★★★</div>
+            <p>“De product UI is nu superduidelijk. De gradientpas voelt premium en helpt hosts bij snelle check-ins.”</p>
             <footer>
-              <strong>David, Rotterdam</strong>
-              <span>Boekt coworking ruimtes</span>
+              <strong>Karim, Utrecht</strong>
+              <span>Community host</span>
             </footer>
           </article>
-          <article class="testimonial-card">
-            <div class="stars" aria-hidden="true">★★★★☆</div>
-            <p>"De support reageerde supersnel toen ik vragen had over check-in. De ervaring voelt veilig en betrouwbaar."</p>
+          <article class="story-card">
+            <div class="rating" aria-hidden="true">★★★★☆</div>
+            <p>“Onze coworking promo's zien er dankzij de palette-sjablonen professioneel uit. Het merk blijft consistent over alle kanalen.”</p>
             <footer>
-              <strong>Leila, Utrecht</strong>
-              <span>Boekt wellness sessies</span>
+              <strong>Lotte, Amsterdam</strong>
+              <span>Marketing lead FlexCo</span>
             </footer>
           </article>
         </div>
@@ -204,42 +218,51 @@
 
     <section class="faq" id="faq">
       <div class="container">
-        <h2>Veelgestelde vragen</h2>
+        <header class="section-heading">
+          <span class="eyebrow">Veelgestelde vragen</span>
+          <h2>Alles over merkimplementatie &amp; product</h2>
+        </header>
         <div class="faq-list">
           <details>
-            <summary>Hoe werkt de verificatie van huurders?</summary>
-            <p>Elke huurder voltooit een identiteitscheck en betaalt vooraf. Pas na succesvolle verificatie wordt het tijdslot vrijgegeven.</p>
+            <summary>Welke assets zijn beschikbaar voor teams?</summary>
+            <p>We leveren een Figma design system, social templates, motion presets en drukwerkbestanden. Nieuwe categorieën worden elk kwartaal toegevoegd.</p>
           </details>
           <details>
-            <summary>Welke vergoeding vraagt SharePass?</summary>
-            <p>We rekenen een transparante servicefee van 10% per succesvolle boeking. De rest wordt binnen 48 uur uitbetaald.</p>
+            <summary>Hoe wordt merkconsistentie bewaakt?</summary>
+            <p>In het SharePass Brand Portal staan componentbibliotheken, copy-richtlijnen en checklists voor partners. Automatische QA voorkomt afwijkingen.</p>
           </details>
           <details>
-            <summary>Kan ik een boeking annuleren?</summary>
-            <p>Tot 24 uur vooraf kun je kosteloos annuleren. Daarna geldt een kleine vergoeding om de plek opnieuw aan te bieden.</p>
+            <summary>Hoe sluit het merk aan op de productroadmap?</summary>
+            <p>Flow-patterns en kleurcoderingen zijn modulair opgezet zodat toekomstige features &mdash; zoals groepsdeals of corporate passes &mdash; direct kunnen aansluiten.</p>
           </details>
           <details>
-            <summary>Is er een app beschikbaar?</summary>
-            <p>We starten met een mobiele webapp die je op het startscherm kunt zetten. Native apps volgen later dit jaar.</p>
+            <summary>Is er ondersteuning voor lokale activaties?</summary>
+            <p>Ja. Marketing kits bevatten meertalige copy, fotografie-richtlijnen en printbare posters die inspelen op de sfeer van elke stad.</p>
           </details>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="mobile-cta-bar" role="complementary">
-    <span>Start vandaag met delen of boeken</span>
-    <a class="btn" href="#aanmelden">Gratis aanmelden</a>
+  <div class="cta-ribbon" role="complementary">
+    <p>Ervaar SharePass Flow voor jouw membership-community.</p>
+    <a class="btn solid" href="#aanmelden">Plan een merkdemo</a>
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2024 SharePass. Alle rechten voorbehouden.</p>
-      <div class="footer-links">
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#aanmelden">
+          <span class="brand-icon" aria-hidden="true"></span>
+          <span class="brand-wordmark">SharePass</span>
+        </a>
+        <p class="footer-copy">© 2024 SharePass. Merkidentiteit ontworpen voor gedeelde vooruitgang.</p>
+      </div>
+      <nav aria-label="Footer links">
         <a href="#">Privacy</a>
         <a href="#">Voorwaarden</a>
-        <a href="#">Contact</a>
-      </div>
+        <a href="#">Brand portal</a>
+      </nav>
     </div>
   </footer>
 </body>
