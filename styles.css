@@ -1,14 +1,14 @@
 :root {
-  --color-background: #f8f6f1;
+  --color-background: #f5f4ef;
   --color-surface: #ffffff;
-  --color-ink: #1f2937;
-  --color-muted: #4b5563;
-  --color-primary: #0d63c2;
-  --color-primary-rgb: 13, 99, 194;
-  --color-accent: #f0b429;
-  --color-border: #d4d9e3;
-  --shadow-soft: 0 16px 40px rgba(31, 41, 55, 0.12);
-  --shadow-card: 0 12px 32px rgba(31, 41, 55, 0.14);
+  --color-ink: #1f2933;
+  --color-muted: #556070;
+  --color-primary: #1d4f6d;
+  --color-primary-rgb: 29, 79, 109;
+  --color-accent: #d7b978;
+  --color-border: #d7d9dd;
+  --shadow-soft: 0 16px 36px rgba(31, 41, 51, 0.1);
+  --shadow-card: 0 12px 28px rgba(31, 41, 51, 0.12);
   font-size: 16px;
 }
 
@@ -19,7 +19,7 @@
 body {
   margin: 0;
   font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, #f8f6f1 0%, #f1f4f8 100%);
+  background: var(--color-background);
   color: var(--color-ink);
   line-height: 1.6;
 }
@@ -70,8 +70,8 @@ img {
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 0.6rem;
-  background: linear-gradient(135deg, #0d63c2, #19467c);
-  box-shadow: 0 10px 18px rgba(13, 99, 194, 0.35);
+  background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.95), rgba(18, 58, 80, 0.9));
+  box-shadow: 0 10px 18px rgba(22, 58, 80, 0.25);
   position: relative;
 }
 
@@ -104,7 +104,7 @@ img {
   bottom: -0.35rem;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(13, 99, 194, 0), rgba(13, 99, 194, 0.75), rgba(13, 99, 194, 0));
+  background: linear-gradient(90deg, rgba(29, 79, 109, 0), rgba(29, 79, 109, 0.7), rgba(29, 79, 109, 0));
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.25s ease;
@@ -135,24 +135,24 @@ img {
 }
 
 .btn.solid {
-  background: linear-gradient(135deg, #0d63c2, #144b8a);
+  background: var(--color-primary);
   color: #ffffff;
-  box-shadow: 0 18px 38px rgba(13, 99, 194, 0.28);
+  box-shadow: 0 14px 32px rgba(22, 58, 80, 0.22);
 }
 
 .btn.solid:hover,
 .btn.solid:focus-visible {
-  box-shadow: 0 22px 45px rgba(13, 99, 194, 0.38);
+  box-shadow: 0 18px 36px rgba(22, 58, 80, 0.28);
 }
 
 .btn.outline {
-  border: 2px solid rgba(var(--color-primary-rgb), 0.18);
+  border: 2px solid rgba(var(--color-primary-rgb), 0.2);
   color: var(--color-primary);
   background: rgba(255, 255, 255, 0.7);
 }
 
 .btn.ghost {
-  background: rgba(var(--color-primary-rgb), 0.1);
+  background: rgba(var(--color-primary-rgb), 0.08);
   color: var(--color-primary);
 }
 
@@ -165,9 +165,9 @@ img {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background: radial-gradient(60% 70% at 12% 18%, rgba(13, 99, 194, 0.15), transparent 70%),
-    radial-gradient(45% 55% at 85% 25%, rgba(240, 180, 41, 0.18), transparent 75%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(248, 246, 241, 0.9));
+  background: radial-gradient(60% 70% at 12% 18%, rgba(var(--color-primary-rgb), 0.12), transparent 70%),
+    radial-gradient(45% 55% at 85% 25%, rgba(215, 185, 120, 0.15), transparent 75%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(245, 244, 239, 0.95));
   pointer-events: none;
 }
 
@@ -249,6 +249,7 @@ img {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.85rem;
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(23, 42, 58, 0.08);
 }
 
 .lead-form input {
@@ -280,7 +281,7 @@ img {
   background: var(--color-surface);
   border-radius: 1.8rem;
   box-shadow: var(--shadow-card);
-  border: 1px solid rgba(212, 217, 227, 0.65);
+  border: 1px solid rgba(23, 42, 58, 0.08);
   padding: 1.8rem;
   display: grid;
   gap: 1.4rem;
@@ -313,10 +314,10 @@ img {
 }
 
 .preview-card {
-  background: linear-gradient(135deg, rgba(13, 99, 194, 0.08), rgba(13, 99, 194, 0));
+  background: linear-gradient(135deg, rgba(29, 79, 109, 0.08), rgba(29, 79, 109, 0));
   border-radius: 1.2rem;
   padding: 1.25rem;
-  border: 1px solid rgba(212, 217, 227, 0.7);
+  border: 1px solid rgba(23, 42, 58, 0.08);
   display: grid;
   gap: 0.2rem;
 }
@@ -378,8 +379,8 @@ img {
 }
 
 .badge.neutral {
-  background: rgba(240, 180, 41, 0.16);
-  color: #8b5d12;
+  background: rgba(215, 185, 120, 0.18);
+  color: #70562b;
 }
 
 .metrics {
@@ -392,8 +393,8 @@ img {
   background: rgba(255, 255, 255, 0.92);
   border-radius: 1.2rem;
   padding: 1.4rem 1.2rem;
-  box-shadow: 0 14px 32px rgba(31, 41, 55, 0.08);
-  border: 1px solid rgba(212, 217, 227, 0.7);
+  box-shadow: 0 14px 30px rgba(22, 42, 58, 0.08);
+  border: 1px solid rgba(23, 42, 58, 0.08);
   text-align: left;
 }
 
@@ -434,8 +435,8 @@ img {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 1.4rem;
   padding: 1.8rem;
-  border: 1px solid rgba(212, 217, 227, 0.65);
-  box-shadow: 0 14px 36px rgba(31, 41, 55, 0.08);
+  border: 1px solid rgba(23, 42, 58, 0.08);
+  box-shadow: 0 14px 34px rgba(22, 42, 58, 0.08);
 }
 
 .pillar-card h3 {
@@ -446,7 +447,7 @@ img {
 
 .experience {
   padding: 5.5rem 0;
-  background: linear-gradient(180deg, rgba(31, 41, 55, 0.02), rgba(240, 246, 252, 0.6));
+  background: linear-gradient(180deg, rgba(29, 79, 109, 0.05), rgba(245, 244, 239, 0.8));
 }
 
 .experience-grid {
@@ -459,8 +460,8 @@ img {
   background: var(--color-surface);
   border-radius: 1.4rem;
   padding: 1.75rem;
-  border: 1px solid rgba(212, 217, 227, 0.65);
-  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.08);
+  border: 1px solid rgba(23, 42, 58, 0.08);
+  box-shadow: 0 12px 26px rgba(22, 42, 58, 0.08);
 }
 
 .experience-card .step {
@@ -478,98 +479,9 @@ img {
   margin: 0.7rem 0;
 }
 
-.visual-language {
-  padding: 5.5rem 0;
-}
-
-.visual-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.palette ul {
-  margin: 1.2rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 1rem;
-}
-
-.palette li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.1rem;
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(212, 217, 227, 0.6);
-  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.05);
-}
-
-.swatch {
-  width: 3.1rem;
-  height: 3.1rem;
-  border-radius: 0.9rem;
-  background: var(--swatch);
-  box-shadow: inset 0 0 0 1px rgba(31, 41, 55, 0.08);
-}
-
-.palette li div strong {
-  display: block;
-  font-family: 'Manrope', 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
-}
-
-.palette li div small {
-  color: var(--color-muted);
-}
-
-.typography .type-card {
-  background: linear-gradient(135deg, rgba(13, 99, 194, 0.08), rgba(240, 180, 41, 0.08));
-  border-radius: 1.3rem;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  box-shadow: 0 12px 26px rgba(31, 41, 55, 0.06);
-}
-
-.type-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: rgba(31, 41, 55, 0.55);
-}
-
-.type-example {
-  margin: 0.5rem 0 0;
-  font-family: 'Manrope', 'IBM Plex Sans', sans-serif;
-  font-size: 1.2rem;
-}
-
-.type-note {
-  margin-top: 1rem;
-  color: var(--color-muted);
-}
-
-.motifs ul {
-  margin: 1rem 0 0;
-  padding-left: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.75rem;
-  color: var(--color-muted);
-  font-weight: 500;
-}
-
-.motifs li span {
-  margin-right: 0.6rem;
-  font-size: 1.1rem;
-  color: var(--color-primary);
-}
-
 .stories {
   padding: 5.5rem 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(248, 246, 241, 0.8));
+  background: linear-gradient(180deg, rgba(29, 79, 109, 0.05), rgba(245, 244, 239, 0.85));
 }
 
 .story-grid {
@@ -582,8 +494,8 @@ img {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 1.4rem;
   padding: 1.9rem;
-  border: 1px solid rgba(212, 217, 227, 0.65);
-  box-shadow: 0 16px 32px rgba(31, 41, 55, 0.08);
+  border: 1px solid rgba(23, 42, 58, 0.08);
+  box-shadow: 0 16px 30px rgba(22, 42, 58, 0.08);
 }
 
 .story-card .rating {
@@ -614,8 +526,8 @@ img {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 1.3rem;
   padding: 1.3rem 1.5rem;
-  border: 1px solid rgba(212, 217, 227, 0.65);
-  box-shadow: 0 12px 26px rgba(31, 41, 55, 0.08);
+  border: 1px solid rgba(23, 42, 58, 0.08);
+  box-shadow: 0 12px 24px rgba(22, 42, 58, 0.08);
 }
 
 .faq summary {
@@ -646,8 +558,8 @@ details[open] summary::after {
 
 .cta-ribbon {
   margin: 0 auto;
-  background: linear-gradient(135deg, #0d63c2, #1f2937);
-  color: #ffffff;
+  background: linear-gradient(135deg, rgba(22, 58, 80, 0.95), rgba(17, 43, 58, 0.98));
+  color: #f7f5f1;
   display: flex;
   align-items: center;
   justify-content: center;
