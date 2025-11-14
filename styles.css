@@ -16,6 +16,10 @@
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,6 +29,18 @@ body {
   background: var(--background);
   color: var(--text);
   line-height: 1.6;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 img {
@@ -57,6 +73,71 @@ img {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1rem 0.5rem;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(88, 80, 236, 0.45);
+  outline-offset: 2px;
+}
+
+.nav-toggle__bar {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle__bar::before {
+  top: -6px;
+}
+
+.nav-toggle__bar::after {
+  top: 6px;
+}
+
+.nav-toggle.is-open .nav-toggle__bar {
+  background: transparent;
+}
+
+.nav-toggle.is-open .nav-toggle__bar::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle__bar::after {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .brand {
@@ -823,12 +904,39 @@ body.modal-open {
 }
 
 @media (max-width: 900px) {
-  .primary-nav {
-    display: none;
+  .header-bar {
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
-  .header-bar {
-    justify-content: space-between;
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 22px 44px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    z-index: 20;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .primary-nav a {
+    width: 100%;
   }
 
   .faq__grid {

@@ -17,6 +17,35 @@ const hideToast = (toastElement) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const primaryNav = document.querySelector('[data-primary-nav]');
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    primaryNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          primaryNav.classList.remove('is-open');
+          navToggle.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (!window.matchMedia('(max-width: 900px)').matches) {
+        primaryNav.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   const form = document.querySelector('[data-signup-form]');
   const toast = document.querySelector('[data-toast]');
   const toastDismiss = toast ? toast.querySelector('[data-toast-dismiss]') : null;
