@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharePass | Deel ongebruikte abonnementstijd</title>
+  <title>SharePass | Deel je ongebruikte abonnement</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,283 +11,327 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="container">
-      <div class="logo">SharePass</div>
-      <nav class="nav-links">
-        <a href="#hoe-het-werkt">Hoe het werkt</a>
-        <a href="#demo">Demo</a>
-        <a href="#tijdslots">Tijdslots</a>
-        <a href="#waarom">Waarom SharePass?</a>
+  <header class="site-header" id="hero">
+    <div class="container header-bar">
+      <a class="brand" href="#hero">SharePass</a>
+      <nav class="primary-nav" aria-label="Hoofdmenu">
+        <a href="#how-it-works">Hoe het werkt</a>
+        <a href="#timeslots">Tijdsloten</a>
+        <a href="#signup">Aanmelden</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <a class="cta" href="#aanmelden">Start nu</a>
+      <a class="button button--ghost" href="#signup">Doe mee</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="aanmelden">
-      <div class="container">
-        <div class="hero-content">
-          <span class="badge">Wat doet SharePass?</span>
-          <h1>Verhuur de tijd die je niet gebruikt</h1>
-          <div class="hero-description">
-            <p>SharePass is een platform waar mensen hun ongebruikte abonnementen kunnen delen met anderen.</p>
-            <p>Veel mensen hebben een sportschool-, sauna-, wellness-, padel- of coworking-abonnement, maar gebruiken het niet elke dag. Die “vrije dagen” zijn eigenlijk verspilde waarde.</p>
-            <p>Met SharePass kunnen ze die waarde omzetten in inkomsten, terwijl huurders voordelig toegang krijgen tot dezelfde ervaring.</p>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Pilot 2025</span>
+          <h1>Deel je ongebruikte <span class="highlight">abonnement</span></h1>
+          <p class="lead">Heb je een sportschool, sauna, padel of wellness abonnement? Verdien geld terug door de tijd die je niet gebruikt te delen met anderen.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#provider">Ik heb een abonnement</a>
+            <a class="button button--secondary" href="#renter">Ik wil toegang boeken</a>
           </div>
-          <ul class="hero-benefits">
-            <li><span aria-hidden="true">✔</span> Deel je abonnement wanneer je het zelf niet gebruikt</li>
-            <li><span aria-hidden="true">✔</span> Anderen huren jouw tijdslot voor een klein bedrag</li>
-            <li><span aria-hidden="true">✔</span> SharePass verdient mee aan elke transactie — net als Airbnb</li>
+          <ul class="hero__benefits" aria-label="Belangrijkste voordelen">
+            <li>Verhuur jouw ongebruikte tijdsloten veilig en snel</li>
+            <li>Huurders betalen een eerlijk tarief voor flexibele toegang</li>
+            <li>SharePass regelt betalingen en verificaties</li>
           </ul>
-          <div class="hero-example" aria-label="Voorbeeld tijdslot">
-            <p class="hero-example-title">Voorbeeld tijdslot</p>
-            <p class="hero-example-body">“Donderdag 18:00–20:00 gebruik ik mijn sportschool niet.”</p>
-            <p class="hero-example-helper">Zet jouw vrije momenten open en laat iemand anders ze boeken.</p>
-          </div>
-          <p class="hero-summary">🟢 Kortste samenvatting: SharePass laat mensen de tijd die ze niet gebruiken van hun abonnement verhuren, en anderen kunnen die tijd goedkoop huren. SharePass verdient aan de transactiekosten.</p>
-          <div class="hero-winwin" aria-label="Win-win voordelen">
-            <p class="hero-winwin-title">➜ Win-win:</p>
-            <ul class="hero-winwin-list">
-              <li>De verhuurder verdient geld aan zijn abonnement</li>
-              <li>De huurder sport of ontspant zonder duur abonnement</li>
-              <li>SharePass verdient aan de transacties</li>
-            </ul>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="#verhuurders">Ik heb een abonnement</a>
-            <a class="btn secondary" href="#huurders">Ik wil toegang boeken</a>
-            <a class="btn tertiary" href="#demo">Bekijk demo</a>
-          </div>
-          <form class="lead-form" aria-label="Laat je e-mail achter voor vroege toegang">
-            <label class="sr-only" for="lead-email">E-mailadres</label>
-            <input id="lead-email" type="email" name="email" placeholder="Vul je e-mail in" required>
-            <button class="btn primary" type="submit">Ontvang invite</button>
-            <p class="form-helper">Geen spam. We mailen alleen wanneer je kunt starten.</p>
-            <p class="form-confirmation" data-lead-success role="status" hidden>Dank je! We sturen je binnenkort een invite.</p>
-          </form>
         </div>
-        <div class="hero-visual">
-          <div class="card">
-            <h3>Voorbeeld boeking</h3>
-            <p class="time">Zaterdag 10:00 - 12:00</p>
-            <p class="location">Urban Fitness, Amsterdam</p>
-            <div class="avatars">
-              <span class="avatar">JD</span>
-              <span class="avatar">MV</span>
-              <span class="avatar">LS</span>
-            </div>
-            <p class="status">Nog 2 plekken beschikbaar</p>
-          </div>
-          <div class="trust-signals" aria-label="Vertrouwen en sociale bewijskracht">
-            <div class="metric">
-              <strong>4.8/5</strong>
-              <span>Gemiddelde beoordeling</span>
-            </div>
-            <div class="metric">
-              <strong>1.200+</strong>
-              <span>Gedeelde tijdslots</span>
-            </div>
-            <div class="metric">
-              <strong>24/7</strong>
-              <span>Community support</span>
-            </div>
-          </div>
+        <figure class="hero__visual">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80" alt="Mensen die samen sporten in een moderne sportschool" loading="lazy">
+          <figcaption>Flexibel sporten en wellness delen met SharePass</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="how-it-works">
+      <div class="container">
+        <header class="section__header">
+          <h2>Hoe werkt het?</h2>
+          <p>Of je nu een abonnement hebt of juist flexibel wilt sporten: iedereen wint.</p>
+        </header>
+        <div class="split-grid">
+          <article class="info-card" id="provider">
+            <h3>Voor abonnementhouders</h3>
+            <ol class="step-list">
+              <li>
+                <h4>Maak een account aan</h4>
+                <p>Registreer je en voeg je abonnement toe.</p>
+              </li>
+              <li>
+                <h4>Plaats tijdsloten</h4>
+                <p>Geef aan wanneer je je abonnement niet gebruikt.</p>
+              </li>
+              <li>
+                <h4>Verdien direct</h4>
+                <p>Krijg uitbetaald zodra een flexer jouw slot boekt.</p>
+              </li>
+            </ol>
+          </article>
+          <article class="info-card info-card--accent" id="renter">
+            <h3>Voor flexsporters</h3>
+            <ol class="step-list">
+              <li>
+                <h4>Zoek een tijdslot</h4>
+                <p>Kies jouw favoriete locatie en beschikbare momenten.</p>
+              </li>
+              <li>
+                <h4>Boek direct</h4>
+                <p>Reserveer en betaal veilig via SharePass.</p>
+              </li>
+              <li>
+                <h4>Geniet van toegang</h4>
+                <p>Ontvang je digitale toegangspas in je inbox.</p>
+              </li>
+            </ol>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="demo" id="demo">
+    <section class="section" id="timeslots">
       <div class="container">
-        <div class="demo-header">
-          <span class="badge">Probeer het zelf</span>
-          <h2>Maak een snelle SharePass demo</h2>
-          <p>Ontdek hoe jouw ongebruikte tijdslots inkomsten genereren en hoe huurders profiteren. Pas de schuifjes aan en zie direct het effect.</p>
-        </div>
-        <div class="demo-content">
-          <form class="demo-form" aria-label="Bereken je SharePass inkomsten">
-            <div class="demo-input">
-              <div class="demo-input-header">
-                <label for="demo-slots">Vrije slots per week</label>
-                <output id="demo-slots-value" for="demo-slots">4</output>
-              </div>
-              <input id="demo-slots" type="range" min="0" max="14" step="1" value="4">
-              <div class="demo-scale" aria-hidden="true">
-                <span>0</span>
-                <span>14+</span>
-              </div>
-            </div>
-            <div class="demo-input">
-              <div class="demo-input-header">
-                <label for="demo-price">Prijs per slot (in €)</label>
-                <output id="demo-price-value" for="demo-price">12</output>
-              </div>
-              <input id="demo-price" type="range" min="5" max="40" step="1" value="12">
-              <div class="demo-scale" aria-hidden="true">
-                <span>€5</span>
-                <span>€40</span>
-              </div>
-            </div>
-            <div class="demo-input">
-              <div class="demo-input-header">
-                <label for="demo-occupancy">Bezettingsgraad</label>
-                <output id="demo-occupancy-value" for="demo-occupancy">70%</output>
-              </div>
-              <input id="demo-occupancy" type="range" min="30" max="100" step="5" value="70">
-              <div class="demo-scale" aria-hidden="true">
-                <span>30%</span>
-                <span>100%</span>
-              </div>
-            </div>
-            <p class="demo-footnote">We rekenen in dit voorbeeld een servicefee van 10% per succesvolle boeking.</p>
-          </form>
-          <div class="demo-results" aria-live="polite">
-            <h3>Direct resultaat</h3>
-            <p class="demo-results-intro">Deze demo gebruikt jouw invoer om een maandprognose te maken.</p>
-            <dl class="demo-metrics">
-              <div class="demo-metric">
-                <dt>Boekingen per maand</dt>
-                <dd data-demo-result="bookings">12</dd>
-              </div>
-              <div class="demo-metric">
-                <dt>Bruto omzet</dt>
-                <dd data-demo-result="revenue">€144</dd>
-              </div>
-              <div class="demo-metric">
-                <dt>SharePass fee</dt>
-                <dd data-demo-result="fee">€14</dd>
-              </div>
-              <div class="demo-metric highlight">
-                <dt>Netto voor jou</dt>
-                <dd data-demo-result="payout">€130</dd>
-              </div>
-            </dl>
-            <div class="demo-progress" aria-hidden="true">
-              <div class="demo-progress-track">
-                <span class="demo-progress-segment is-owner" data-demo-progress="owner"></span>
-                <span class="demo-progress-segment is-sharepass" data-demo-progress="sharepass"></span>
-              </div>
-              <div class="demo-progress-legend">
-                <span>Jij</span>
-                <span>SharePass</span>
-              </div>
-            </div>
-            <p class="demo-summary" data-demo-result="summary">Met vier vrije slots per week verdien je ongeveer €130 per maand, terwijl SharePass een kleine fee ontvangt.</p>
-            <p class="demo-note" data-demo-note hidden></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="steps" id="hoe-het-werkt">
-      <div class="container">
-        <h2>Hoe het werkt</h2>
-        <div class="steps-grid">
-          <div class="step" id="verhuurders">
-            <span class="step-number">1</span>
-            <h3>Deel je vrije tijd</h3>
-            <p>Maak een listing voor de tijdslots waarop jij je abonnement niet gebruikt en bepaal je eigen prijs.</p>
-          </div>
-          <div class="step" id="huurders">
-            <span class="step-number">2</span>
-            <h3>Kies een slot</h3>
-            <p>Zoek op locatie, activiteit en tijd. Kies een passend tijdslot en boek direct.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Check-in & geniet</h3>
-            <p>Huurders ontvangen een digitale pass. Verhuurders krijgen uitbetaald na het slot.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slots" id="tijdslots">
-      <div class="container">
-        <h2>Voorbeeld tijdslots</h2>
+        <header class="section__header">
+          <h2>Voorbeeld tijdsloten</h2>
+          <p>Bekijk hoe voordelig en flexibel je kunt sporten of ontspannen.</p>
+        </header>
         <div class="slot-grid">
           <article class="slot-card">
-            <h3>City Gym - Rotterdam</h3>
-            <p class="time">Maandag 18:00 - 20:00</p>
-            <p class="price">€8 per sessie</p>
-            <p class="details">Inclusief gebruik van sauna en groepsles.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="City Gym - Rotterdam">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Basic-Fit Groningen</h3>
+                <p>Sportschool</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Vandaag 18:00–19:30</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€4</span>
+              <button class="button button--ghost" type="button" data-slot="Basic-Fit Groningen">Boek nu</button>
+            </div>
           </article>
           <article class="slot-card">
-            <h3>Wellness Spa - Utrecht</h3>
-            <p class="time">Woensdag 10:00 - 14:00</p>
-            <p class="price">€15 per slot</p>
-            <p class="details">Ontspan in de sauna en float ruimtes.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="Wellness Spa - Utrecht">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Padel Club Utrecht</h3>
+                <p>Padelbaan</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Zaterdag 10:00–11:00</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€6</span>
+              <button class="button button--ghost" type="button" data-slot="Padel Club Utrecht">Boek nu</button>
+            </div>
           </article>
           <article class="slot-card">
-            <h3>Padel Club - Eindhoven</h3>
-            <p class="time">Vrijdag 19:00 - 21:00</p>
-            <p class="price">€12 per baan</p>
-            <p class="details">Inclusief racket en ballen.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="Padel Club - Eindhoven">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Wellness Rotterdam</h3>
+                <p>Spa &amp; Wellness</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Zondag 14:00–18:00</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€15</span>
+              <button class="button button--ghost" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
+            </div>
           </article>
           <article class="slot-card">
-            <h3>Cowork Hub - Amsterdam</h3>
-            <p class="time">Dinsdag 09:00 - 17:00</p>
-            <p class="price">€20 per dag</p>
-            <p class="details">Focuszones, snelle wifi en koffie inbegrepen.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="Cowork Hub - Amsterdam">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Thermen Berendonck</h3>
+                <p>Sauna &amp; Thermen</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Vrijdag 16:00–20:00</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€12</span>
+              <button class="button button--ghost" type="button" data-slot="Thermen Berendonck">Boek nu</button>
+            </div>
           </article>
           <article class="slot-card">
-            <h3>Yoga Loft - Den Haag</h3>
-            <p class="time">Zondag 08:00 - 10:00</p>
-            <p class="price">€10 per sessie</p>
-            <p class="details">Vinyasa flow les met max 12 deelnemers.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="Yoga Loft - Den Haag">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>David Lloyd Amsterdam</h3>
+                <p>Premium Sportclub</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Dinsdag 07:00–08:30</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€8</span>
+              <button class="button button--ghost" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
+            </div>
           </article>
           <article class="slot-card">
-            <h3>Surf House - Scheveningen</h3>
-            <p class="time">Zaterdag 14:00 - 16:00</p>
-            <p class="price">€18 per sessie</p>
-            <p class="details">Inclusief wetsuit en board.</p>
-            <button class="btn tertiary book-button" type="button" data-slot="Surf House - Scheveningen">Boek nu</button>
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Squash City Den Haag</h3>
+                <p>Squash &amp; Fitness</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Woensdag 19:00–20:30</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€5</span>
+              <button class="button button--ghost" type="button" data-slot="Squash City Den Haag">Boek nu</button>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="why" id="waarom">
-      <div class="container">
-        <h2>Waarom SharePass?</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <h3>Maximaliseer waarde</h3>
-            <p>Verhuurders verdienen extra aan ongebruikte tijd, terwijl huurders premium ervaringen krijgen zonder langlopende contracten.</p>
+    <section class="section section--gradient" id="signup">
+      <div class="container signup">
+        <header class="section__header">
+          <h2>Doe mee met de eerste SharePass-pilot</h2>
+          <p>Laat je e-mailadres achter en kies of je een abonnement hebt of flexibel wilt sporten. Zodra we live gaan in jouw stad krijg je een uitnodiging.</p>
+        </header>
+        <div class="signup__card">
+          <form class="signup-form" data-signup-form novalidate>
+            <div class="form-field" data-field="email">
+              <label for="signup-email">E-mailadres</label>
+              <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="jij@email.nl" required>
+              <p class="form-error" data-error hidden>Voer een geldig e-mailadres in.</p>
+            </div>
+
+            <fieldset class="form-field" data-field="user-type">
+              <legend>Ik ben een…</legend>
+              <div class="radio-grid">
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="provider">
+                  <span>Ik heb een abonnement</span>
+                </label>
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="user">
+                  <span>Ik wil flexibel sporten</span>
+                </label>
+              </div>
+              <p class="form-error" data-error hidden>Maak een keuze om verder te gaan.</p>
+            </fieldset>
+
+            <button class="button button--primary button--full" type="submit">Aanmelden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="faq">
+      <div class="container faq">
+        <header class="section__header">
+          <h2>Veelgestelde vragen</h2>
+          <p>Alles wat je moet weten over SharePass.</p>
+        </header>
+        <div class="faq__grid">
+          <div class="faq__list">
+            <details class="faq-item" open>
+              <summary>Is SharePass legaal?</summary>
+              <p>Ja, je deelt alleen de tijd dat jij je eigen abonnement niet gebruikt. Sportscholen hebben geen extra kosten, want jij hebt al een actief abonnement.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Hoe verdient SharePass geld?</summary>
+              <p>We rekenen een kleine transactievergoeding per boeking. Zo kunnen we het platform onderhouden en beide partijen ondersteunen.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Moet ik mijn abonnement delen?</summary>
+              <p>Je kiest zelf welke tijdsloten je aanbiedt en wanneer. Jij houdt de volledige controle.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Krijgt mijn sportschool hier problemen mee?</summary>
+              <p>Nee, we passen niets aan in het systeem van de sportschool. Jij hebt een geldig abonnement en bepaalt zelf wanneer je het deelt.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wanneer gaat SharePass live?</summary>
+              <p>We starten binnenkort met een pilot in meerdere steden. Meld je aan en krijg als eerste bericht wanneer we jouw regio toevoegen.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is mijn betaling veilig?</summary>
+              <p>Ja, alle betalingen verlopen via bekende en beveiligde betaalproviders zoals iDEAL en Stripe.</p>
+            </details>
           </div>
-          <div class="why-card">
-            <h3>Transparante transacties</h3>
-            <p>Veilige betalingen en directe bevestiging met een eerlijke transactievergoeding voor SharePass.</p>
-          </div>
-          <div class="why-card">
-            <h3>Flexibel en lokaal</h3>
-            <p>Boek in jouw stad, op tijden die passen bij je agenda. Deel de toegang met je community.</p>
+          <div class="trust-grid">
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🧭</span>
+              <h3>Jij hebt de controle</h3>
+              <p>Bepaal zelf welke tijden je deelt en wanneer je liever zelf gaat.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🔒</span>
+              <h3>Veilige betalingen</h3>
+              <p>Transacties verlopen via vertrouwde providers en versleutelde verbindingen.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🛡️</span>
+              <h3>Privacy gegarandeerd</h3>
+              <p>Je gegevens worden niet gedeeld met sportscholen of derden.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section about">
+      <div class="container about__content">
+        <h2>Over SharePass</h2>
+        <p>SharePass helpt abonnementhouders hun ongebruikte tijd om te zetten in inkomsten. Flexsporters krijgen toegang tot premium locaties zonder zich vast te leggen aan een duur abonnement.</p>
+        <p>Zo maken we sporten en wellness flexibeler, betaalbaarder en slimmer voor iedereen.</p>
+      </div>
+    </section>
   </main>
 
-  <div class="mobile-cta-bar" role="complementary">
-    <span>Start vandaag met delen of boeken</span>
-    <a class="btn" href="#aanmelden">Gratis aanmelden</a>
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2024 SharePass. Alle rechten voorbehouden.</p>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Voorwaarden</a>
-        <a href="#">Contact</a>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <h3 class="footer__brand">SharePass</h3>
+        <p class="footer__tagline">Deel slim, bespaar samen.</p>
+        <div class="footer__socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#how-it-works">Hoe werkt het?</a></li>
+          <li><a href="#timeslots">Tijdsloten</a></li>
+          <li><a href="#signup">Aanmelden</a></li>
+          <li><a href="#faq">Veelgestelde vragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ondersteuning</h4>
+        <ul>
+          <li><a href="#signup">Contact</a></li>
+          <li><a href="#faq">Hulp &amp; Support</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacybeleid</a></li>
+          <li><a href="#">Algemene voorwaarden</a></li>
+          <li><a href="#">Cookiebeleid</a></li>
+        </ul>
       </div>
     </div>
+    <div class="container footer__bottom">
+      <p>© 2025 SharePass. Alle rechten voorbehouden.</p>
+      <p>Gemaakt met ❤️ in Nederland.</p>
+    </div>
   </footer>
+
+  <div class="toast" data-toast hidden>
+    <p data-toast-message>Bedankt voor je aanmelding!</p>
+    <button type="button" class="toast__close" data-toast-dismiss aria-label="Melding sluiten">×</button>
+  </div>
 </body>
 </html>
