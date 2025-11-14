@@ -670,6 +670,88 @@ body.modal-open {
   gap: 1.25rem;
 }
 
+.modal__access-demo {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(88, 80, 236, 0.05);
+  border: 1px solid rgba(88, 80, 236, 0.12);
+}
+
+.modal__demo-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.modal__demo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.modal__code-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.modal__code-value {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  color: var(--primary-dark);
+}
+
+.modal__qr {
+  padding: 1rem;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px dashed rgba(88, 80, 236, 0.3);
+  display: grid;
+  place-items: center;
+}
+
+.modal__qr-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background-image:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.1) 0 18px, transparent 18px 36px),
+    linear-gradient(rgba(15, 23, 42, 0.1) 0 18px, transparent 18px 36px);
+  background-size: 36px 36px;
+  background-position: 0 0;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal__qr-placeholder::after {
+  content: '';
+  width: 32%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  border: 2px solid rgba(15, 23, 42, 0.24);
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.modal__demo-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .modal__detail {
   display: flex;
   gap: 1rem;
