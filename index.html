@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="top-bar">
@@ -15,6 +16,7 @@
       <div class="logo">SharePass</div>
       <nav class="nav-links">
         <a href="#hoe-het-werkt">Hoe het werkt</a>
+        <a href="#demo">Demo</a>
         <a href="#tijdslots">Tijdslots</a>
         <a href="#waarom">Waarom SharePass?</a>
         <a href="#getuigenissen">Reviews</a>
@@ -57,12 +59,14 @@
           <div class="hero-actions">
             <a class="btn primary" href="#verhuurders">Ik heb een abonnement</a>
             <a class="btn secondary" href="#huurders">Ik wil toegang boeken</a>
+            <a class="btn tertiary" href="#demo">Bekijk demo</a>
           </div>
           <form class="lead-form" aria-label="Laat je e-mail achter voor vroege toegang">
             <label class="sr-only" for="lead-email">E-mailadres</label>
             <input id="lead-email" type="email" name="email" placeholder="Vul je e-mail in" required>
             <button class="btn primary" type="submit">Ontvang invite</button>
             <p class="form-helper">Geen spam. We mailen alleen wanneer je kunt starten.</p>
+            <p class="form-confirmation" data-lead-success role="status" hidden>Dank je! We sturen je binnenkort een invite.</p>
           </form>
         </div>
         <div class="hero-visual">
@@ -90,6 +94,88 @@
               <strong>24/7</strong>
               <span>Community support</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="demo-header">
+          <span class="badge">Probeer het zelf</span>
+          <h2>Maak een snelle SharePass demo</h2>
+          <p>Ontdek hoe jouw ongebruikte tijdslots inkomsten genereren en hoe huurders profiteren. Pas de schuifjes aan en zie direct het effect.</p>
+        </div>
+        <div class="demo-content">
+          <form class="demo-form" aria-label="Bereken je SharePass inkomsten">
+            <div class="demo-input">
+              <div class="demo-input-header">
+                <label for="demo-slots">Vrije slots per week</label>
+                <output id="demo-slots-value" for="demo-slots">4</output>
+              </div>
+              <input id="demo-slots" type="range" min="0" max="14" step="1" value="4">
+              <div class="demo-scale" aria-hidden="true">
+                <span>0</span>
+                <span>14+</span>
+              </div>
+            </div>
+            <div class="demo-input">
+              <div class="demo-input-header">
+                <label for="demo-price">Prijs per slot (in €)</label>
+                <output id="demo-price-value" for="demo-price">12</output>
+              </div>
+              <input id="demo-price" type="range" min="5" max="40" step="1" value="12">
+              <div class="demo-scale" aria-hidden="true">
+                <span>€5</span>
+                <span>€40</span>
+              </div>
+            </div>
+            <div class="demo-input">
+              <div class="demo-input-header">
+                <label for="demo-occupancy">Bezettingsgraad</label>
+                <output id="demo-occupancy-value" for="demo-occupancy">70%</output>
+              </div>
+              <input id="demo-occupancy" type="range" min="30" max="100" step="5" value="70">
+              <div class="demo-scale" aria-hidden="true">
+                <span>30%</span>
+                <span>100%</span>
+              </div>
+            </div>
+            <p class="demo-footnote">We rekenen in dit voorbeeld een servicefee van 10% per succesvolle boeking.</p>
+          </form>
+          <div class="demo-results" aria-live="polite">
+            <h3>Direct resultaat</h3>
+            <p class="demo-results-intro">Deze demo gebruikt jouw invoer om een maandprognose te maken.</p>
+            <dl class="demo-metrics">
+              <div class="demo-metric">
+                <dt>Boekingen per maand</dt>
+                <dd data-demo-result="bookings">12</dd>
+              </div>
+              <div class="demo-metric">
+                <dt>Bruto omzet</dt>
+                <dd data-demo-result="revenue">€144</dd>
+              </div>
+              <div class="demo-metric">
+                <dt>SharePass fee</dt>
+                <dd data-demo-result="fee">€14</dd>
+              </div>
+              <div class="demo-metric highlight">
+                <dt>Netto voor jou</dt>
+                <dd data-demo-result="payout">€130</dd>
+              </div>
+            </dl>
+            <div class="demo-progress" aria-hidden="true">
+              <div class="demo-progress-track">
+                <span class="demo-progress-segment is-owner" data-demo-progress="owner"></span>
+                <span class="demo-progress-segment is-sharepass" data-demo-progress="sharepass"></span>
+              </div>
+              <div class="demo-progress-legend">
+                <span>Jij</span>
+                <span>SharePass</span>
+              </div>
+            </div>
+            <p class="demo-summary" data-demo-result="summary">Met vier vrije slots per week verdien je ongeveer €130 per maand, terwijl SharePass een kleine fee ontvangt.</p>
+            <p class="demo-note" data-demo-note hidden></p>
           </div>
         </div>
       </div>
@@ -127,42 +213,42 @@
             <p class="time">Maandag 18:00 - 20:00</p>
             <p class="price">€8 per sessie</p>
             <p class="details">Inclusief gebruik van sauna en groepsles.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="City Gym - Rotterdam">Boek nu</button>
           </article>
           <article class="slot-card">
             <h3>Wellness Spa - Utrecht</h3>
             <p class="time">Woensdag 10:00 - 14:00</p>
             <p class="price">€15 per slot</p>
             <p class="details">Ontspan in de sauna en float ruimtes.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="Wellness Spa - Utrecht">Boek nu</button>
           </article>
           <article class="slot-card">
             <h3>Padel Club - Eindhoven</h3>
             <p class="time">Vrijdag 19:00 - 21:00</p>
             <p class="price">€12 per baan</p>
             <p class="details">Inclusief racket en ballen.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="Padel Club - Eindhoven">Boek nu</button>
           </article>
           <article class="slot-card">
             <h3>Cowork Hub - Amsterdam</h3>
             <p class="time">Dinsdag 09:00 - 17:00</p>
             <p class="price">€20 per dag</p>
             <p class="details">Focuszones, snelle wifi en koffie inbegrepen.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="Cowork Hub - Amsterdam">Boek nu</button>
           </article>
           <article class="slot-card">
             <h3>Yoga Loft - Den Haag</h3>
             <p class="time">Zondag 08:00 - 10:00</p>
             <p class="price">€10 per sessie</p>
             <p class="details">Vinyasa flow les met max 12 deelnemers.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="Yoga Loft - Den Haag">Boek nu</button>
           </article>
           <article class="slot-card">
             <h3>Surf House - Scheveningen</h3>
             <p class="time">Zaterdag 14:00 - 16:00</p>
             <p class="price">€18 per sessie</p>
             <p class="details">Inclusief wetsuit en board.</p>
-            <button class="btn tertiary">Boek nu</button>
+            <button class="btn tertiary book-button" type="button" data-slot="Surf House - Scheveningen">Boek nu</button>
           </article>
         </div>
       </div>
