@@ -329,6 +329,35 @@
     </div>
   </footer>
 
+  <div class="modal" data-booking-modal hidden>
+    <div class="modal__overlay" data-booking-overlay></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+      <div class="modal__header">
+        <span class="modal__badge">Tijdslot demo</span>
+        <h3 class="modal__title" id="booking-modal-title" data-booking-title>Basic-Fit Groningen</h3>
+        <p class="modal__location" data-booking-location>Sportschool</p>
+      </div>
+      <div class="modal__details">
+        <div class="modal__detail">
+          <span class="modal__detail-icon" aria-hidden="true">🕒</span>
+          <div>
+            <span class="modal__detail-label">Tijd</span>
+            <p class="modal__detail-value" data-booking-time>Vandaag 18:00–19:30</p>
+          </div>
+        </div>
+        <div class="modal__detail">
+          <span class="modal__detail-icon" aria-hidden="true">💶</span>
+          <div>
+            <span class="modal__detail-label">Prijs</span>
+            <p class="modal__detail-value" data-booking-price>€4</p>
+          </div>
+        </div>
+      </div>
+      <p class="modal__description">In de echte versie kun je hier direct betalen en een toegangscode ontvangen.</p>
+      <button class="button button--primary modal__close" type="button" data-booking-close>Sluiten</button>
+    </div>
+  </div>
+
   <div class="toast" data-toast hidden>
     <p data-toast-message>Bedankt voor je aanmelding!</p>
     <button type="button" class="toast__close" data-toast-dismiss aria-label="Melding sluiten">×</button>
