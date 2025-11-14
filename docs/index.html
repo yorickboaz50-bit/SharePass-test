@@ -14,13 +14,17 @@
   <header class="site-header" id="hero">
     <div class="container header-bar">
       <a class="brand" href="#hero">SharePass</a>
-      <nav class="primary-nav" aria-label="Hoofdmenu">
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Hoofdmenu openen</span>
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" data-primary-nav data-open="false" aria-label="Hoofdmenu">
         <a href="#how-it-works">Hoe het werkt</a>
         <a href="#timeslots">Tijdsloten</a>
         <a href="#signup">Aanmelden</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button--ghost" href="#signup">Doe mee</a>
+      <a class="button button--ghost header-cta" href="#signup">Doe mee</a>
     </div>
   </header>
 

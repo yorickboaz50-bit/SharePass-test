@@ -22,6 +22,86 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastDismiss = toast ? toast.querySelector('[data-toast-dismiss]') : null;
   let toastTimeoutId;
 
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const primaryNav = document.querySelector('[data-primary-nav]');
+  const navLinks = primaryNav ? Array.from(primaryNav.querySelectorAll('a')) : [];
+  const navMediaQuery = window.matchMedia ? window.matchMedia('(min-width: 901px)') : null;
+
+  const closePrimaryNav = ({ restoreFocus = false } = {}) => {
+    if (!primaryNav || !navToggle) {
+      return false;
+    }
+
+    if (primaryNav.dataset.open !== 'true') {
+      return false;
+    }
+
+    primaryNav.dataset.open = 'false';
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+
+    if (restoreFocus && typeof navToggle.focus === 'function') {
+      navToggle.focus();
+    }
+
+    return true;
+  };
+
+  const openPrimaryNav = () => {
+    if (!primaryNav || !navToggle) {
+      return;
+    }
+
+    primaryNav.dataset.open = 'true';
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+  };
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      if (primaryNav.dataset.open === 'true') {
+        closePrimaryNav();
+      } else {
+        openPrimaryNav();
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closePrimaryNav();
+      });
+    });
+
+    const handleDocumentClick = (event) => {
+      if (!primaryNav || primaryNav.dataset.open !== 'true') {
+        return;
+      }
+
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      if (primaryNav.contains(target) || navToggle.contains(target)) {
+        return;
+      }
+
+      closePrimaryNav();
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    if (navMediaQuery) {
+      navMediaQuery.addEventListener('change', (event) => {
+        if (event.matches) {
+          primaryNav.dataset.open = 'false';
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        }
+      });
+    }
+  }
+
   const radioCards = form ? Array.from(form.querySelectorAll('[data-radio-card]')) : [];
 
   const bookingModal = document.querySelector('[data-booking-modal]');
@@ -210,7 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && bookingModal && !bookingModal.hidden) {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    const navWasClosed = closePrimaryNav({ restoreFocus: true });
+    if (navWasClosed) {
+      return;
+    }
+
+    if (bookingModal && !bookingModal.hidden) {
       closeBookingModal();
     }
   });
