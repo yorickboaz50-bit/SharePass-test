@@ -11,12 +11,17 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header" id="hero">
+  <header class="site-header">
     <div class="container header-bar">
       <a class="brand" href="#hero">SharePass</a>
-      <nav class="primary-nav" aria-label="Hoofdmenu">
-        <a href="#how-it-works">Hoe het werkt</a>
-        <a href="#timeslots">Tijdsloten</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
+        <a href="#hero">Home</a>
+        <a href="#howitworks">Hoe werkt het</a>
+        <a href="#slots">Tijdsloten</a>
         <a href="#signup">Aanmelden</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -25,7 +30,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="container hero__grid">
         <div class="hero__content">
           <span class="eyebrow">Pilot 2025</span>
@@ -48,7 +53,7 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="how-it-works">
+    <section class="section section--muted" id="howitworks">
       <div class="container">
         <header class="section__header">
           <h2>Hoe werkt het?</h2>
@@ -93,7 +98,7 @@
       </div>
     </section>
 
-    <section class="section" id="timeslots">
+    <section class="section" id="slots">
       <div class="container">
         <header class="section__header">
           <h2>Voorbeeld tijdsloten</h2>
@@ -300,8 +305,8 @@
       <div>
         <h4>Platform</h4>
         <ul>
-          <li><a href="#how-it-works">Hoe werkt het?</a></li>
-          <li><a href="#timeslots">Tijdsloten</a></li>
+          <li><a href="#howitworks">Hoe werkt het?</a></li>
+          <li><a href="#slots">Tijdsloten</a></li>
           <li><a href="#signup">Aanmelden</a></li>
           <li><a href="#faq">Veelgestelde vragen</a></li>
         </ul>
