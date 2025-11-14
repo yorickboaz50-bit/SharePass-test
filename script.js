@@ -1,173 +1,156 @@
-const currencyFormatter = new Intl.NumberFormat('nl-NL', {
-  style: 'currency',
-  currency: 'EUR',
-  maximumFractionDigits: 0,
-});
+const EMAIL_PATTERN = /^(?:[^\s@]+@[^\s@]+\.[^\s@]{2,})$/i;
 
-const oneDecimalFormatter = new Intl.NumberFormat('nl-NL', {
-  minimumFractionDigits: 1,
-  maximumFractionDigits: 1,
-});
-
-const integerFormatter = new Intl.NumberFormat('nl-NL', {
-  maximumFractionDigits: 0,
-});
-
-const formatCurrency = (value) => currencyFormatter.format(Math.max(0, Math.round(value)));
-
-const formatBookings = (value) => {
-  const safeValue = Math.max(0, value);
-  if (safeValue < 10) {
-    return oneDecimalFormatter.format(safeValue);
+const showToast = (toastElement, message) => {
+  if (!toastElement) return;
+  const messageElement = toastElement.querySelector('[data-toast-message]');
+  if (messageElement) {
+    messageElement.textContent = message;
   }
-  return integerFormatter.format(Math.round(safeValue));
+  toastElement.hidden = false;
+  toastElement.setAttribute('aria-live', 'polite');
+};
+
+const hideToast = (toastElement) => {
+  if (!toastElement) return;
+  toastElement.hidden = true;
+  toastElement.removeAttribute('aria-live');
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const slotInput = document.getElementById('demo-slots');
-  const priceInput = document.getElementById('demo-price');
-  const occupancyInput = document.getElementById('demo-occupancy');
+  const form = document.querySelector('[data-signup-form]');
+  const toast = document.querySelector('[data-toast]');
+  const toastDismiss = toast ? toast.querySelector('[data-toast-dismiss]') : null;
+  let toastTimeoutId;
 
-  const slotOutput = document.getElementById('demo-slots-value');
-  const priceOutput = document.getElementById('demo-price-value');
-  const occupancyOutput = document.getElementById('demo-occupancy-value');
+  const radioCards = form ? Array.from(form.querySelectorAll('[data-radio-card]')) : [];
 
-  const resultElements = {
-    bookings: document.querySelector('[data-demo-result="bookings"]'),
-    revenue: document.querySelector('[data-demo-result="revenue"]'),
-    fee: document.querySelector('[data-demo-result="fee"]'),
-    payout: document.querySelector('[data-demo-result="payout"]'),
-    summary: document.querySelector('[data-demo-result="summary"]'),
-  };
-
-  const noteElement = document.querySelector('[data-demo-note]');
-  const progressSegments = {
-    owner: document.querySelector('[data-demo-progress="owner"]'),
-    sharepass: document.querySelector('[data-demo-progress="sharepass"]'),
-  };
-
-  const leadForm = document.querySelector('.lead-form');
-  const leadSuccess = leadForm ? leadForm.querySelector('[data-lead-success]') : null;
-  const bookingButtons = document.querySelectorAll('.book-button');
-
-  const weeksPerMonth = 4.3;
-  const serviceFeeRate = 0.1;
-  let noteTimeoutId;
-
-  const updateProgress = (revenue, payout, fee) => {
-    if (!progressSegments.owner || !progressSegments.sharepass) {
-      return;
-    }
-
-    if (revenue <= 0) {
-      progressSegments.owner.style.width = '0%';
-      progressSegments.sharepass.style.width = '0%';
-      return;
-    }
-
-    const ownerPercentage = Math.min(100, Math.max(0, (payout / revenue) * 100));
-    const feePercentage = Math.min(100, Math.max(0, (fee / revenue) * 100));
-
-    progressSegments.owner.style.width = `${ownerPercentage}%`;
-    progressSegments.sharepass.style.width = `${feePercentage}%`;
-  };
-
-  const hideNote = () => {
-    if (noteElement) {
-      noteElement.hidden = true;
-      noteElement.textContent = '';
-    }
-    if (noteTimeoutId) {
-      window.clearTimeout(noteTimeoutId);
-      noteTimeoutId = undefined;
+  const setFieldError = (field, message) => {
+    if (!field) return;
+    field.dataset.invalid = 'true';
+    const errorElement = field.querySelector('[data-error]');
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.hidden = false;
     }
   };
 
-  const showNote = (message) => {
-    if (!noteElement) {
-      return;
+  const clearFieldError = (field) => {
+    if (!field) return;
+    delete field.dataset.invalid;
+    const errorElement = field.querySelector('[data-error]');
+    if (errorElement) {
+      errorElement.hidden = true;
     }
-    hideNote();
-    noteElement.textContent = message;
-    noteElement.hidden = false;
-    noteTimeoutId = window.setTimeout(() => {
-      hideNote();
-    }, 4500);
   };
 
-  const updateDemo = () => {
-    if (!slotInput || !priceInput || !occupancyInput) {
-      return;
-    }
-
-    hideNote();
-
-    const slots = Number(slotInput.value);
-    const price = Number(priceInput.value);
-    const occupancy = Number(occupancyInput.value);
-
-    if (slotOutput) {
-      slotOutput.textContent = integerFormatter.format(slots);
-    }
-    if (priceOutput) {
-      priceOutput.textContent = formatCurrency(price);
-    }
-    if (occupancyOutput) {
-      occupancyOutput.textContent = `${occupancy}%`;
-    }
-
-    const bookings = slots * weeksPerMonth * (occupancy / 100);
-    const revenue = bookings * price;
-    const fee = revenue * serviceFeeRate;
-    const payout = revenue - fee;
-
-    if (resultElements.bookings) {
-      resultElements.bookings.textContent = formatBookings(bookings);
-    }
-    if (resultElements.revenue) {
-      resultElements.revenue.textContent = formatCurrency(revenue);
-    }
-    if (resultElements.fee) {
-      resultElements.fee.textContent = formatCurrency(fee);
-    }
-    if (resultElements.payout) {
-      resultElements.payout.textContent = formatCurrency(payout);
-    }
-    if (resultElements.summary) {
-      resultElements.summary.textContent = `Met ${integerFormatter.format(slots)} vrije slots per week à ${formatCurrency(price)} en ${occupancy}% bezetting verdien je ongeveer ${formatCurrency(payout)} per maand. SharePass ontvangt ${formatCurrency(fee)} voor het faciliteren van de boekingen.`;
-    }
-
-    updateProgress(revenue, payout, fee);
+  const toggleActiveCard = () => {
+    radioCards.forEach((card) => {
+      const input = card.querySelector('input[type="radio"]');
+      if (!input) return;
+      if (input.checked) {
+        card.classList.add('is-active');
+      } else {
+        card.classList.remove('is-active');
+      }
+    });
   };
 
-  [slotInput, priceInput, occupancyInput].forEach((input) => {
-    if (input) {
-      input.addEventListener('input', updateDemo);
-    }
+  radioCards.forEach((card) => {
+    const input = card.querySelector('input[type="radio"]');
+    if (!input) return;
+    card.addEventListener('click', () => {
+      input.checked = true;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    input.addEventListener('change', () => {
+      toggleActiveCard();
+      const field = card.closest('[data-field="user-type"]');
+      if (field) {
+        clearFieldError(field);
+      }
+    });
   });
 
-  if (leadForm && leadSuccess) {
-    leadForm.addEventListener('submit', (event) => {
+  if (form) {
+    const emailField = form.querySelector('[data-field="email"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const userTypeField = form.querySelector('[data-field="user-type"]');
+
+    if (emailInput) {
+      emailInput.addEventListener('input', () => {
+        if (EMAIL_PATTERN.test(emailInput.value.trim())) {
+          clearFieldError(emailField);
+        }
+      });
+    }
+
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
-      hideNote();
-      leadSuccess.hidden = false;
-      const emailField = leadForm.querySelector('input[type="email"]');
-      if (emailField) {
-        emailField.value = '';
-        emailField.focus();
+      let hasError = false;
+
+      if (!emailInput || !emailField) {
+        return;
       }
-      window.setTimeout(() => {
-        leadSuccess.hidden = true;
-      }, 4000);
+
+      const emailValue = emailInput.value.trim();
+      if (!EMAIL_PATTERN.test(emailValue)) {
+        setFieldError(emailField, 'Voer een geldig e-mailadres in.');
+        if (!hasError) {
+          emailInput.focus();
+        }
+        hasError = true;
+      } else {
+        clearFieldError(emailField);
+      }
+
+      const selectedType = form.querySelector('input[name="userType"]:checked');
+      if (!selectedType) {
+        setFieldError(userTypeField, 'Maak een keuze om verder te gaan.');
+        if (!hasError && userTypeField) {
+          userTypeField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        hasError = true;
+      } else {
+        clearFieldError(userTypeField);
+      }
+
+      if (hasError) {
+        return;
+      }
+
+      form.reset();
+      toggleActiveCard();
+      clearFieldError(emailField);
+      clearFieldError(userTypeField);
+
+      hideToast(toast);
+      window.clearTimeout(toastTimeoutId);
+      showToast(toast, 'Bedankt voor je aanmelding! 🎉 We laten het je weten zodra we live gaan in jouw regio.');
+      toastTimeoutId = window.setTimeout(() => {
+        hideToast(toast);
+      }, 5000);
     });
   }
 
-  bookingButtons.forEach((button) => {
+  if (toastDismiss && toast) {
+    toastDismiss.addEventListener('click', () => {
+      window.clearTimeout(toastTimeoutId);
+      hideToast(toast);
+    });
+  }
+
+  const slotButtons = document.querySelectorAll('[data-slot]');
+  slotButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const slotName = button.dataset.slot || 'dit tijdslot';
-      showNote(`📅 ${slotName} staat klaar. Zodra SharePass live is kun je dit slot direct reserveren.`);
+      const slotName = button.getAttribute('data-slot') || 'dit tijdslot';
+      hideToast(toast);
+      window.clearTimeout(toastTimeoutId);
+      showToast(toast, `📅 ${slotName} staat klaar. Zodra SharePass live is kun je dit slot direct reserveren.`);
+      toastTimeoutId = window.setTimeout(() => {
+        hideToast(toast);
+      }, 4500);
     });
   });
 
-  updateDemo();
+  toggleActiveCard();
 });
