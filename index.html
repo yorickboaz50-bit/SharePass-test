@@ -11,26 +11,21 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="hero">
     <div class="container header-bar">
       <a class="brand" href="#hero">SharePass</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="nav-toggle__bar" aria-hidden="true"></span>
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
-        <a href="#hero">Home</a>
-        <a href="#howitworks">Hoe werkt het</a>
-        <a href="#slots">Tijdsloten</a>
+      <nav class="primary-nav" aria-label="Hoofdmenu">
+        <a href="#how-it-works">Hoe het werkt</a>
+        <a href="#timeslots">Tijdsloten</a>
         <a href="#signup">Aanmelden</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button--primary" href="#signup">Doe mee</a>
+      <a class="button button--ghost" href="#signup">Doe mee</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="hero">
+    <section class="hero">
       <div class="container hero__grid">
         <div class="hero__content">
           <span class="eyebrow">Pilot 2025</span>
@@ -38,7 +33,7 @@
           <p class="lead">Heb je een sportschool, sauna, padel of wellness abonnement? Verdien geld terug door de tijd die je niet gebruikt te delen met anderen.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="#provider">Ik heb een abonnement</a>
-            <a class="button button--outline" href="#renter">Ik wil toegang boeken</a>
+            <a class="button button--secondary" href="#renter">Ik wil toegang boeken</a>
           </div>
           <ul class="hero__benefits" aria-label="Belangrijkste voordelen">
             <li>Verhuur jouw ongebruikte tijdsloten veilig en snel</li>
@@ -53,7 +48,7 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="howitworks">
+    <section class="section section--muted" id="how-it-works">
       <div class="container">
         <header class="section__header">
           <h2>Hoe werkt het?</h2>
@@ -98,7 +93,7 @@
       </div>
     </section>
 
-    <section class="section" id="slots">
+    <section class="section" id="timeslots">
       <div class="container">
         <header class="section__header">
           <h2>Voorbeeld tijdsloten</h2>
@@ -116,7 +111,7 @@
             <p class="slot-card__time">Vandaag 18:00–19:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€4</span>
-              <button class="button button--outline" type="button" data-slot="Basic-Fit Groningen">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="Basic-Fit Groningen">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -130,7 +125,7 @@
             <p class="slot-card__time">Zaterdag 10:00–11:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€6</span>
-              <button class="button button--outline" type="button" data-slot="Padel Club Utrecht">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="Padel Club Utrecht">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -144,7 +139,7 @@
             <p class="slot-card__time">Zondag 14:00–18:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€15</span>
-              <button class="button button--outline" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -158,7 +153,7 @@
             <p class="slot-card__time">Vrijdag 16:00–20:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€12</span>
-              <button class="button button--outline" type="button" data-slot="Thermen Berendonck">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="Thermen Berendonck">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -172,7 +167,7 @@
             <p class="slot-card__time">Dinsdag 07:00–08:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€8</span>
-              <button class="button button--outline" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -186,7 +181,7 @@
             <p class="slot-card__time">Woensdag 19:00–20:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€5</span>
-              <button class="button button--outline" type="button" data-slot="Squash City Den Haag">Boek nu</button>
+              <button class="button button--ghost" type="button" data-slot="Squash City Den Haag">Boek nu</button>
             </div>
           </article>
         </div>
@@ -305,8 +300,8 @@
       <div>
         <h4>Platform</h4>
         <ul>
-          <li><a href="#howitworks">Hoe werkt het?</a></li>
-          <li><a href="#slots">Tijdsloten</a></li>
+          <li><a href="#how-it-works">Hoe werkt het?</a></li>
+          <li><a href="#timeslots">Tijdsloten</a></li>
           <li><a href="#signup">Aanmelden</a></li>
           <li><a href="#faq">Veelgestelde vragen</a></li>
         </ul>
@@ -358,17 +353,6 @@
           </div>
         </div>
       </div>
-      <section class="modal__access-demo" aria-label="Voorbeeld toegangscode">
-        <h4 class="modal__demo-title">Toegangscode (demo)</h4>
-        <div class="modal__demo-card">
-          <span class="modal__code-label">Code</span>
-          <span class="modal__code-value">SP-48291</span>
-        </div>
-        <div class="modal__qr" role="img" aria-label="Placeholder voor QR-code">
-          <div class="modal__qr-placeholder"></div>
-        </div>
-        <p class="modal__demo-note">In de echte versie krijg je hier een unieke QR-code of toegangscode die je bij de locatie kunt gebruiken.</p>
-      </section>
       <p class="modal__description">In de echte versie kun je hier direct betalen en een toegangscode ontvangen.</p>
       <button class="button button--primary modal__close" type="button" data-booking-close>Sluiten</button>
     </div>
