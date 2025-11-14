@@ -24,6 +24,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const radioCards = form ? Array.from(form.querySelectorAll('[data-radio-card]')) : [];
 
+  const bookingModal = document.querySelector('[data-booking-modal]');
+  const bookingOverlay = bookingModal ? bookingModal.querySelector('[data-booking-overlay]') : null;
+  const bookingCloseButton = bookingModal ? bookingModal.querySelector('[data-booking-close]') : null;
+  const bookingTitle = bookingModal ? bookingModal.querySelector('[data-booking-title]') : null;
+  const bookingLocation = bookingModal ? bookingModal.querySelector('[data-booking-location]') : null;
+  const bookingTime = bookingModal ? bookingModal.querySelector('[data-booking-time]') : null;
+  const bookingPrice = bookingModal ? bookingModal.querySelector('[data-booking-price]') : null;
+  let lastActiveElement = null;
+
+  const closeBookingModal = () => {
+    if (!bookingModal) {
+      return;
+    }
+
+    bookingModal.hidden = true;
+    document.body.classList.remove('modal-open');
+
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  };
+
+  const openBookingModal = ({ title, location, time, price }) => {
+    if (!bookingModal) {
+      return;
+    }
+
+    if (bookingTitle) {
+      bookingTitle.textContent = title;
+    }
+
+    if (bookingLocation) {
+      if (location) {
+        bookingLocation.textContent = location;
+        bookingLocation.hidden = false;
+      } else {
+        bookingLocation.hidden = true;
+      }
+    }
+
+    if (bookingTime) {
+      bookingTime.textContent = time;
+    }
+
+    if (bookingPrice) {
+      bookingPrice.textContent = price;
+    }
+
+    lastActiveElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+    bookingModal.hidden = false;
+    document.body.classList.add('modal-open');
+
+    if (bookingCloseButton) {
+      bookingCloseButton.focus();
+    }
+  };
+
   const setFieldError = (field, message) => {
     if (!field) return;
     field.dataset.invalid = 'true';
@@ -139,16 +197,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  if (bookingCloseButton) {
+    bookingCloseButton.addEventListener('click', () => {
+      closeBookingModal();
+    });
+  }
+
+  if (bookingOverlay) {
+    bookingOverlay.addEventListener('click', () => {
+      closeBookingModal();
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && bookingModal && !bookingModal.hidden) {
+      closeBookingModal();
+    }
+  });
+
   const slotButtons = document.querySelectorAll('[data-slot]');
   slotButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const slotName = button.getAttribute('data-slot') || 'dit tijdslot';
+      const card = button.closest('.slot-card');
+      const title = card ? card.querySelector('.slot-card__header h3') : null;
+      const detail = card ? card.querySelector('.slot-card__header p') : null;
+      const time = card ? card.querySelector('.slot-card__time') : null;
+      const price = card ? card.querySelector('.slot-card__price') : null;
+
       hideToast(toast);
       window.clearTimeout(toastTimeoutId);
-      showToast(toast, `📅 ${slotName} staat klaar. Zodra SharePass live is kun je dit slot direct reserveren.`);
-      toastTimeoutId = window.setTimeout(() => {
-        hideToast(toast);
-      }, 4500);
+
+      openBookingModal({
+        title: title ? title.textContent.trim() : 'SharePass tijdslot',
+        location: detail ? detail.textContent.trim() : '',
+        time: time ? time.textContent.trim() : 'Binnenkort beschikbaar',
+        price: price ? price.textContent.trim() : '€0',
+      });
     });
   });
 

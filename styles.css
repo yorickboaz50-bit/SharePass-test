@@ -605,6 +605,116 @@ input[type="email"]:focus {
   font-size: 0.95rem;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+.modal__dialog {
+  position: relative;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(88, 80, 236, 0.14);
+  width: min(440px, 92vw);
+  display: grid;
+  gap: 1.75rem;
+  z-index: 1;
+}
+
+.modal__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.modal__badge {
+  justify-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(88, 80, 236, 0.1);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.modal__location {
+  margin: 0;
+  color: var(--muted);
+}
+
+.modal__details {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.modal__detail {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(88, 80, 236, 0.08);
+}
+
+.modal__detail-icon {
+  font-size: 1.75rem;
+}
+
+.modal__detail-label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.modal__detail-value {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.modal__description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.modal__close {
+  justify-self: flex-start;
+  padding-inline: 1.75rem;
+}
+
+.modal__close:focus-visible {
+  outline: 3px solid rgba(88, 80, 236, 0.4);
+  outline-offset: 2px;
+}
+
 .toast {
   position: fixed;
   left: 50%;
@@ -665,5 +775,13 @@ input[type="email"]:focus {
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .modal__dialog {
+    padding: 2rem;
   }
 }
