@@ -21,7 +21,9 @@
       <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
         <a href="#hero">Home</a>
         <a href="#howitworks">Hoe werkt het</a>
+        <a href="#benefits">Voordelen</a>
         <a href="#slots">Tijdsloten</a>
+        <a href="#stories">Ervaringen</a>
         <a href="#signup">Aanmelden</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -50,6 +52,45 @@
           <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80" alt="Mensen die samen sporten in een moderne sportschool" loading="lazy">
           <figcaption>Flexibel sporten en wellness delen met SharePass</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section benefits" id="benefits">
+      <div class="container benefits__layout">
+        <header class="section__header benefits__header">
+          <span class="eyebrow">Waarom SharePass?</span>
+          <h2>Klaar om slim te verdienen én flexibel te sporten</h2>
+          <p>We combineren het gemak van een abonnement met de vrijheid van pay-per-use. Zo haal je het maximale uit elke minuut dat jouw abonnement openstaat.</p>
+        </header>
+        <div class="benefit-grid" aria-label="Belangrijkste voordelen van SharePass">
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">💸</span>
+            <h3>Verdien tot 70% terug</h3>
+            <p>Gemiddeld verdienen abonnementhouders binnen een maand hun vaste kosten deels terug door ongebruikte uren te delen.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">⚡</span>
+            <h3>Boek in 3 klikken</h3>
+            <p>Geoptimaliseerde flow met duidelijke stappen en directe bevestiging zorgt ervoor dat flexsporters minder afhaken.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">✅</span>
+            <h3>100% veilig geregeld</h3>
+            <p>Identiteits- en betaalchecks schermen zowel verhuurder als huurder af. Jij behoudt altijd de controle over je toegang.</p>
+          </article>
+        </div>
+        <div class="benefits__aside" role="complementary" aria-label="Resultaten uit de pilot">
+          <div class="stat-card">
+            <span class="stat-card__label">Gemiddelde beoordeling</span>
+            <strong class="stat-card__value">4.8/5</strong>
+            <p class="stat-card__note">Gebaseerd op de eerste 120 proefboekingen.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Tijd tot eerste boeking</span>
+            <strong class="stat-card__value">&lt; 24u</strong>
+            <p class="stat-card__note">De meeste tijdsloten worden binnen een dag bevestigd.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -193,6 +234,31 @@
       </div>
     </section>
 
+    <section class="section section--muted testimonials" id="stories">
+      <div class="container">
+        <header class="section__header">
+          <h2>Wat eerste gebruikers zeggen</h2>
+          <p>Social proof helpt twijfels weg te nemen. Daarom vragen we iedereen uit de pilot om hun ervaring te delen.</p>
+        </header>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Mijn Basic-Fit abonnement stond half leeg. Nu betaal ik mijn contributie bijna helemaal terug en krijg ik enthousiaste reacties van huurders.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Ruben (abonnementhouder)</span>
+              <span class="testimonial-card__meta">Verdient €42 per maand terug</span>
+            </footer>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Als startende padelspeler wil ik flexibel blijven. Ik kan last minute boeken en weet precies wat het kost.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Mara (flexsporter)</span>
+              <span class="testimonial-card__meta">Boekte 5 keer in de pilot</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--gradient" id="signup">
       <div class="container signup">
         <header class="section__header">
@@ -282,6 +348,20 @@
       </div>
     </section>
 
+    <section class="section cta-banner" aria-label="Laatste call-to-action">
+      <div class="container cta-banner__content">
+        <div>
+          <span class="eyebrow">Nog even checken?</span>
+          <h2>Doe vandaag mee met de SharePass-pilot</h2>
+          <p>Bevestig je interesse en wij sturen je direct een uitnodiging zodra jouw stad live gaat.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+          <a class="button button--outline button--compact" href="#faq">Bekijk FAQ</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section about">
       <div class="container about__content">
         <h2>Over SharePass</h2>
@@ -333,6 +413,14 @@
       <p>Gemaakt met ❤️ in Nederland.</p>
     </div>
   </footer>
+
+  <div class="floating-cta" data-floating-cta role="complementary" aria-label="Snelle aanmelding">
+    <div class="floating-cta__text">
+      <strong>Doe mee met de pilot</strong>
+      <span>Claim je plek en ontvang updates.</span>
+    </div>
+    <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+  </div>
 
   <div class="modal" data-booking-modal hidden>
     <div class="modal__overlay" data-booking-overlay></div>
