@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharePass | Veelgestelde vragen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="index.html#hero">SharePass</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
+        <a href="index.html#hero">Home</a>
+        <a href="providers.html">Aanbieders</a>
+        <a href="flexers.html">Flexsporters</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+      </nav>
+      <a class="button button--primary" href="#signup">Doe mee</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Hulp nodig?</span>
+          <h1>Veelgestelde vragen over SharePass</h1>
+          <p class="lead">We hebben de antwoorden en extra vertrouwenwekkende info op een aparte pagina gezet.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#faq">Bekijk FAQ</a>
+            <a class="button button--outline" href="#trust">Waarom veilig?</a>
+          </div>
+          <ul class="hero__benefits" aria-label="Snelle highlights">
+            <li>De belangrijkste vragen in één overzicht</li>
+            <li>Extra info over privacy en veiligheid</li>
+            <li>Korte toelichting over ons team en missie</li>
+          </ul>
+        </div>
+        <figure class="hero__visual" aria-label="FAQ overzicht">
+          <div class="hero-mockup">
+            <div class="hero-mockup__glow" aria-hidden="true"></div>
+            <div class="hero-mockup__label">FAQ &amp; Trust</div>
+            <div class="hero-mockup__tile">
+              <div>
+                <p class="hero-mockup__eyebrow">Veelgestelde vragen</p>
+                <h3>Alles op één plek</h3>
+                <p class="hero-mockup__text">Geen lange scroll meer: FAQ, vertrouwen en over ons per pagina.</p>
+              </div>
+              <span class="hero-mockup__chip">Nieuwe structuur</span>
+            </div>
+          </div>
+          <figcaption>De FAQ staat nu los van de andere pagina's.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="faq">
+      <div class="container faq">
+        <header class="section__header">
+          <h2>Veelgestelde vragen</h2>
+          <p>Alles wat je moet weten over SharePass.</p>
+        </header>
+        <div class="faq__grid">
+          <div class="faq__list">
+            <details class="faq-item" open>
+              <summary>Is SharePass legaal?</summary>
+              <p>Ja, je deelt alleen de tijd dat jij je eigen abonnement niet gebruikt. Sportscholen hebben geen extra kosten, want jij hebt al een actief abonnement.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Hoe verdient SharePass geld?</summary>
+              <p>We rekenen een kleine transactievergoeding per boeking. Zo kunnen we het platform onderhouden en beide partijen ondersteunen.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Moet ik mijn abonnement delen?</summary>
+              <p>Je kiest zelf welke tijdsloten je aanbiedt en wanneer. Jij houdt de volledige controle.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Krijgt mijn sportschool hier problemen mee?</summary>
+              <p>Nee, we passen niets aan in het systeem van de sportschool. Jij hebt een geldig abonnement en bepaalt zelf wanneer je het deelt.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wanneer gaat SharePass live?</summary>
+              <p>We starten binnenkort met een pilot in meerdere steden. Meld je aan en krijg als eerste bericht wanneer we jouw regio toevoegen.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is mijn betaling veilig?</summary>
+              <p>Ja, alle betalingen verlopen via bekende en beveiligde betaalproviders zoals iDEAL en Stripe.</p>
+            </details>
+          </div>
+          <div class="trust-grid">
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🧭</span>
+              <h3>Jij hebt de controle</h3>
+              <p>Bepaal zelf welke tijden je deelt en wanneer je liever zelf gaat.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🔒</span>
+              <h3>Veilige betalingen</h3>
+              <p>Transacties verlopen via vertrouwde providers en versleutelde verbindingen.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-card__icon" aria-hidden="true">🛡️</span>
+              <h3>Privacy gegarandeerd</h3>
+              <p>Je gegevens worden niet gedeeld met sportscholen of derden.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="trust">
+      <div class="container about__content">
+        <h2>Over SharePass</h2>
+        <p>SharePass helpt abonnementhouders hun ongebruikte tijd om te zetten in inkomsten. Flexsporters krijgen toegang tot premium locaties zonder zich vast te leggen aan een duur abonnement.</p>
+        <p>Zo maken we sporten en wellness flexibeler, betaalbaarder en slimmer voor iedereen.</p>
+      </div>
+    </section>
+
+    <section class="section section--gradient" id="signup">
+      <div class="container signup">
+        <header class="section__header">
+          <h2>Sluit je aan bij de pilot</h2>
+          <p>Laat je e-mailadres achter, kies jouw rol en ontvang direct een uitnodiging zodra we live gaan in jouw stad.</p>
+        </header>
+        <div class="signup__card">
+          <form class="signup-form" data-signup-form novalidate>
+            <div class="form-field" data-field="email">
+              <label for="signup-email">E-mailadres</label>
+              <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="jij@email.nl" required>
+              <p class="form-error" data-error hidden>Voer een geldig e-mailadres in.</p>
+            </div>
+
+            <fieldset class="form-field" data-field="user-type">
+              <legend>Ik ben een…</legend>
+              <div class="radio-grid">
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="provider">
+                  <span>Ik heb een abonnement</span>
+                </label>
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="user">
+                  <span>Ik wil flexibel sporten</span>
+                </label>
+              </div>
+              <p class="form-error" data-error hidden>Maak een keuze om verder te gaan.</p>
+            </fieldset>
+
+            <button class="button button--primary button--full" type="submit">Aanmelden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-banner" aria-label="Laatste call-to-action">
+      <div class="container cta-banner__content">
+        <div>
+          <span class="eyebrow">Structuur hersteld</span>
+          <h2>Je antwoorden op één pagina</h2>
+          <p>FAQ, vertrouwen en achtergrondinformatie zijn nu samengebracht.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+          <a class="button button--outline button--compact" href="index.html#overview">Terug naar overzicht</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <h3 class="footer__brand">SharePass</h3>
+        <p class="footer__tagline">Deel slim, bespaar samen.</p>
+        <div class="footer__socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#faq">Hoe werkt het?</a></li>
+          <li><a href="#trust">Waarom veilig?</a></li>
+          <li><a href="#signup">Aanmelden</a></li>
+          <li><a href="#faq">Veelgestelde vragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ondersteuning</h4>
+        <ul>
+          <li><a href="#signup">Contact</a></li>
+          <li><a href="#faq">Hulp &amp; Support</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacybeleid</a></li>
+          <li><a href="#">Algemene voorwaarden</a></li>
+          <li><a href="#">Cookiebeleid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2025 SharePass. Alle rechten voorbehouden.</p>
+      <p>Gemaakt met ❤️ in Nederland.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta" data-floating-cta role="complementary" aria-label="Snelle aanmelding">
+    <div class="floating-cta__text">
+      <strong>Doe mee met de pilot</strong>
+      <span>Claim je plek en ontvang updates.</span>
+    </div>
+    <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+  </div>
+
+  <div class="toast" data-toast hidden>
+    <p data-toast-message>Bedankt voor je aanmelding!</p>
+    <button type="button" class="toast__close" data-toast-dismiss aria-label="Melding sluiten">×</button>
+  </div>
+</body>
+</html>
