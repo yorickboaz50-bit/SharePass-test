@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    primaryNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+    primaryNav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.matchMedia('(max-width: 900px)').matches) {
           primaryNav.classList.remove('is-open');

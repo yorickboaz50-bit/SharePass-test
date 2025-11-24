@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharePass | Voor flexsporters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="index.html#hero">SharePass</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
+        <a href="index.html#hero">Home</a>
+        <a href="providers.html">Aanbieders</a>
+        <a href="flexers.html" aria-current="page">Flexsporters</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <a class="button button--primary" href="#signup">Doe mee</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Voor flexsporters</span>
+          <h1>Boek premium toegang zonder vast abonnement</h1>
+          <p class="lead">Zoek een tijdslot dat bij je past, reserveer direct en ontvang een digitale pas in je inbox.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#howitworks">Hoe werkt het</a>
+            <a class="button button--outline" href="#slots">Bekijk tijdsloten</a>
+          </div>
+          <ul class="hero__benefits" aria-label="Voordelen voor flexsporters">
+            <li>Flexibel boeken op de momenten die jij kiest</li>
+            <li>Transparante prijzen en directe bevestiging</li>
+            <li>Digitale toegangspas in je inbox</li>
+          </ul>
+        </div>
+        <figure class="hero__visual" aria-label="Flexibele toegang via SharePass">
+          <div class="hero-mockup">
+            <div class="hero-mockup__glow" aria-hidden="true"></div>
+            <div class="hero-mockup__label">Live demo</div>
+            <div class="hero-mockup__tile">
+              <div>
+                <p class="hero-mockup__eyebrow">Reserveer &amp; ga</p>
+                <h3>Digitale toegang binnen seconden</h3>
+                <p class="hero-mockup__text">Boek nu en ontvang meteen de code die je bij de ingang gebruikt.</p>
+              </div>
+              <span class="hero-mockup__chip">Toegang klaar</span>
+            </div>
+            <div class="phone-mockup" role="presentation">
+              <div class="phone-mockup__frame">
+                <div class="phone-mockup__speaker" aria-hidden="true"></div>
+                <div class="phone-mockup__screen">
+                  <header class="phone-screen__header">
+                    <span class="phone-screen__eyebrow">Jouw boeking</span>
+                    <h3>Squash City Den Haag</h3>
+                    <p>Digitale pas ontvangen. Scan de code en speel!</p>
+                    <div class="phone-screen__badge">QR klaar</div>
+                  </header>
+                  <div class="phone-screen__list" aria-label="Voorbeeld boekingen">
+                    <article class="phone-slot">
+                      <div class="phone-slot__meta">
+                        <div>
+                          <h4>Sauna &amp; wellness</h4>
+                          <p>Morgen 10:00 – 13:00</p>
+                        </div>
+                        <span class="phone-slot__price">€12</span>
+                      </div>
+                      <div class="phone-slot__status">Bevestigd</div>
+                    </article>
+                    <article class="phone-slot">
+                      <div class="phone-slot__meta">
+                        <div>
+                          <h4>Padel Club Utrecht</h4>
+                          <p>Zaterdag 10:00 – 11:00</p>
+                        </div>
+                        <span class="phone-slot__price">€6</span>
+                      </div>
+                      <div class="phone-slot__status phone-slot__status--secondary">Nog 2 banen</div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Zo werkt het boeken voor flexsporters.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="howitworks">
+      <div class="container">
+        <header class="section__header">
+          <h2>Zo werkt boeken via SharePass</h2>
+          <p>Een compacte flow zodat je binnen minuten kunt starten.</p>
+        </header>
+        <div class="split-grid">
+          <article class="info-card">
+            <h3>Vind en boek</h3>
+            <ol class="step-list">
+              <li>
+                <h4>Zoek een tijdslot</h4>
+                <p>Kies een locatie en bekijk direct de beschikbare momenten.</p>
+              </li>
+              <li>
+                <h4>Boek veilig</h4>
+                <p>Betaal via SharePass en ontvang direct een bevestiging.</p>
+              </li>
+            </ol>
+          </article>
+          <article class="info-card info-card--accent">
+            <h3>Check-in &amp; support</h3>
+            <ol class="step-list">
+              <li>
+                <h4>Digitale pas</h4>
+                <p>Ontvang je toegangscode of QR in je inbox en in de app.</p>
+              </li>
+              <li>
+                <h4>Support bij vragen</h4>
+                <p>Heb je hulp nodig? We reageren snel zodat je kunt gaan sporten.</p>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="slots">
+      <div class="container">
+        <header class="section__header">
+          <h2>Beschikbare tijdsloten</h2>
+          <p>Check populaire voorbeelden en kies jouw moment.</p>
+        </header>
+        <div class="slot-grid">
+          <article class="slot-card">
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>David Lloyd Amsterdam</h3>
+                <p>Premium Sportclub</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Dinsdag 07:00–08:30</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€8</span>
+              <button class="button button--outline" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
+            </div>
+          </article>
+          <article class="slot-card">
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Squash City Den Haag</h3>
+                <p>Squash &amp; Fitness</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Woensdag 19:00–20:30</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€5</span>
+              <button class="button button--outline" type="button" data-slot="Squash City Den Haag">Boek nu</button>
+            </div>
+          </article>
+          <article class="slot-card">
+            <div class="slot-card__header">
+              <span class="slot-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Wellness Rotterdam</h3>
+                <p>Spa &amp; Wellness</p>
+              </div>
+            </div>
+            <p class="slot-card__time">Zondag 14:00–18:00</p>
+            <div class="slot-card__footer">
+              <span class="slot-card__price">€15</span>
+              <button class="button button--outline" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted testimonials" id="stories">
+      <div class="container">
+        <header class="section__header">
+          <h2>Ervaringen van flexers</h2>
+          <p>Social proof helpt twijfels weg te nemen. Lees hoe anderen het ervaren.</p>
+        </header>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Als startende padelspeler wil ik flexibel blijven. Ik kan last minute boeken en weet precies wat het kost.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Mara</span>
+              <span class="testimonial-card__meta">Boekte 5 keer in de pilot</span>
+            </footer>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Ik krijg direct een digitale pas. Geen gedoe bij de balie en altijd duidelijk wat de regels zijn.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Joris</span>
+              <span class="testimonial-card__meta">Fan van sauna &amp; wellness</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gradient" id="signup">
+      <div class="container signup">
+        <header class="section__header">
+          <h2>Reserveer jouw plek in de pilot</h2>
+          <p>Laat je e-mailadres achter, kies jouw rol en ontvang direct een uitnodiging zodra we live gaan in jouw stad.</p>
+        </header>
+        <div class="signup__card">
+          <form class="signup-form" data-signup-form novalidate>
+            <div class="form-field" data-field="email">
+              <label for="signup-email">E-mailadres</label>
+              <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="jij@email.nl" required>
+              <p class="form-error" data-error hidden>Voer een geldig e-mailadres in.</p>
+            </div>
+
+            <fieldset class="form-field" data-field="user-type">
+              <legend>Ik ben een…</legend>
+              <div class="radio-grid">
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="provider">
+                  <span>Ik heb een abonnement</span>
+                </label>
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="userType" value="user">
+                  <span>Ik wil flexibel sporten</span>
+                </label>
+              </div>
+              <p class="form-error" data-error hidden>Maak een keuze om verder te gaan.</p>
+            </fieldset>
+
+            <button class="button button--primary button--full" type="submit">Aanmelden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-banner" aria-label="Laatste call-to-action">
+      <div class="container cta-banner__content">
+        <div>
+          <span class="eyebrow">Structuur hersteld</span>
+          <h2>Plan je volgende bezoek</h2>
+          <p>Gebruik de flexerspagina om snel naar relevante info te springen.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+          <a class="button button--outline button--compact" href="index.html#overview">Terug naar overzicht</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <h3 class="footer__brand">SharePass</h3>
+        <p class="footer__tagline">Deel slim, bespaar samen.</p>
+        <div class="footer__socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#howitworks">Hoe werkt het?</a></li>
+          <li><a href="#slots">Tijdsloten</a></li>
+          <li><a href="#signup">Aanmelden</a></li>
+          <li><a href="faq.html">Veelgestelde vragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ondersteuning</h4>
+        <ul>
+          <li><a href="#signup">Contact</a></li>
+          <li><a href="faq.html">Hulp &amp; Support</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacybeleid</a></li>
+          <li><a href="#">Algemene voorwaarden</a></li>
+          <li><a href="#">Cookiebeleid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2025 SharePass. Alle rechten voorbehouden.</p>
+      <p>Gemaakt met ❤️ in Nederland.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta" data-floating-cta role="complementary" aria-label="Snelle aanmelding">
+    <div class="floating-cta__text">
+      <strong>Doe mee met de pilot</strong>
+      <span>Claim je plek en ontvang updates.</span>
+    </div>
+    <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+  </div>
+
+  <div class="modal" data-booking-modal hidden>
+    <div class="modal__overlay" data-booking-overlay></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+      <div class="modal__header">
+        <span class="modal__badge">Tijdslot demo</span>
+        <h3 class="modal__title" id="booking-modal-title" data-booking-title>David Lloyd Amsterdam</h3>
+        <p class="modal__location" data-booking-location>Premium Sportclub</p>
+      </div>
+      <div class="modal__details">
+        <div class="modal__detail">
+          <span class="modal__detail-icon" aria-hidden="true">🕒</span>
+          <div>
+            <span class="modal__detail-label">Tijd</span>
+            <p class="modal__detail-value" data-booking-time>Dinsdag 07:00–08:30</p>
+          </div>
+        </div>
+        <div class="modal__detail">
+          <span class="modal__detail-icon" aria-hidden="true">💶</span>
+          <div>
+            <span class="modal__detail-label">Prijs</span>
+            <p class="modal__detail-value" data-booking-price>€8</p>
+          </div>
+        </div>
+      </div>
+      <section class="modal__access-demo" aria-label="Voorbeeld toegangscode">
+        <h4 class="modal__demo-title">Toegangscode (demo)</h4>
+        <div class="modal__demo-card">
+          <span class="modal__code-label">Code</span>
+          <span class="modal__code-value">SP-48291</span>
+        </div>
+        <div class="modal__qr" role="img" aria-label="Placeholder voor QR-code">
+          <div class="modal__qr-placeholder"></div>
+        </div>
+        <p class="modal__demo-note">In de echte versie krijg je hier een unieke QR-code of toegangscode die je bij de locatie kunt gebruiken.</p>
+      </section>
+      <p class="modal__description">In de echte versie kun je hier direct betalen en een toegangscode ontvangen.</p>
+      <button class="button button--primary modal__close" type="button" data-booking-close>Sluiten</button>
+    </div>
+  </div>
+
+  <div class="toast" data-toast hidden>
+    <p data-toast-message>Bedankt voor je aanmelding!</p>
+    <button type="button" class="toast__close" data-toast-dismiss aria-label="Melding sluiten">×</button>
+  </div>
+</body>
+</html>
