@@ -11,21 +11,28 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header" id="hero">
+  <header class="site-header">
     <div class="container header-bar">
       <a class="brand" href="#hero">SharePass</a>
-      <nav class="primary-nav" aria-label="Hoofdmenu">
-        <a href="#how-it-works">Hoe het werkt</a>
-        <a href="#timeslots">Tijdsloten</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Hoofdmenu" data-primary-nav>
+        <a href="#hero">Home</a>
+        <a href="#howitworks">Hoe werkt het</a>
+        <a href="#benefits">Voordelen</a>
+        <a href="#slots">Tijdsloten</a>
+        <a href="#stories">Ervaringen</a>
         <a href="#signup">Aanmelden</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button--ghost" href="#signup">Doe mee</a>
+      <a class="button button--primary" href="#signup">Doe mee</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="container hero__grid">
         <div class="hero__content">
           <span class="eyebrow">Pilot 2025</span>
@@ -33,7 +40,7 @@
           <p class="lead">Heb je een sportschool, sauna, padel of wellness abonnement? Verdien geld terug door de tijd die je niet gebruikt te delen met anderen.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="#provider">Ik heb een abonnement</a>
-            <a class="button button--secondary" href="#renter">Ik wil toegang boeken</a>
+            <a class="button button--outline" href="#renter">Ik wil toegang boeken</a>
           </div>
           <ul class="hero__benefits" aria-label="Belangrijkste voordelen">
             <li>Verhuur jouw ongebruikte tijdsloten veilig en snel</li>
@@ -41,14 +48,99 @@
             <li>SharePass regelt betalingen en verificaties</li>
           </ul>
         </div>
-        <figure class="hero__visual">
-          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80" alt="Mensen die samen sporten in een moderne sportschool" loading="lazy">
-          <figcaption>Flexibel sporten en wellness delen met SharePass</figcaption>
+        <figure class="hero__visual" aria-label="SharePass demo in een telefoonmockup">
+          <div class="hero-mockup">
+            <div class="hero-mockup__glow" aria-hidden="true"></div>
+            <div class="hero-mockup__label">Live demo</div>
+            <div class="hero-mockup__tile">
+              <div>
+                <p class="hero-mockup__eyebrow">SharePass voorbeeld</p>
+                <h3>Ongebruikte tijdsloten gevuld</h3>
+                <p class="hero-mockup__text">Bekijk hoe abonnementhouders direct inkomsten verdienen zodra een flexer boekt.</p>
+              </div>
+              <span class="hero-mockup__chip">Nieuwe boeking</span>
+            </div>
+            <div class="phone-mockup" role="presentation">
+              <div class="phone-mockup__frame">
+                <div class="phone-mockup__speaker" aria-hidden="true"></div>
+                <div class="phone-mockup__screen">
+                  <header class="phone-screen__header">
+                    <span class="phone-screen__eyebrow">SharePass demo</span>
+                    <h3>Nieuwe abonnement gedeeld</h3>
+                    <p>Laura deelt haar sportschoolpas voor vanavond. Flexers boeken direct en ontvangen hun toegangspas.</p>
+                    <div class="phone-screen__badge">Digitale pas klaar</div>
+                  </header>
+                  <div class="phone-screen__list" aria-label="Voorbeeld tijdsloten in de app">
+                    <article class="phone-slot">
+                      <div class="phone-slot__meta">
+                        <div>
+                          <h4>Sportschool toegang</h4>
+                          <p>Vandaag 18:00 – 19:30</p>
+                        </div>
+                        <span class="phone-slot__price">€4</span>
+                      </div>
+                      <div class="phone-slot__status">Betaald en bevestigd</div>
+                    </article>
+                    <article class="phone-slot">
+                      <div class="phone-slot__meta">
+                        <div>
+                          <h4>Sauna &amp; wellness</h4>
+                          <p>Morgen 10:00 – 13:00</p>
+                        </div>
+                        <span class="phone-slot__price">€12</span>
+                      </div>
+                      <div class="phone-slot__status phone-slot__status--secondary">Nog 3 plekken</div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>De SharePass demo in een smartphone frame.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section section--muted" id="how-it-works">
+    <section class="section benefits" id="benefits">
+      <div class="container benefits__layout">
+        <header class="section__header benefits__header">
+          <span class="eyebrow">Waarom SharePass?</span>
+          <h2>Klaar om slim te verdienen én flexibel te sporten</h2>
+          <p>We combineren het gemak van een abonnement met de vrijheid van pay-per-use. Zo haal je het maximale uit elke minuut dat jouw abonnement openstaat.</p>
+        </header>
+        <div class="benefit-grid" aria-label="Belangrijkste voordelen van SharePass">
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">💸</span>
+            <h3>Verdien tot 70% terug</h3>
+            <p>Gemiddeld verdienen abonnementhouders binnen een maand hun vaste kosten deels terug door ongebruikte uren te delen.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">⚡</span>
+            <h3>Boek in 3 klikken</h3>
+            <p>Geoptimaliseerde flow met duidelijke stappen en directe bevestiging zorgt ervoor dat flexsporters minder afhaken.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true">✅</span>
+            <h3>100% veilig geregeld</h3>
+            <p>Identiteits- en betaalchecks schermen zowel verhuurder als huurder af. Jij behoudt altijd de controle over je toegang.</p>
+          </article>
+        </div>
+        <div class="benefits__aside" role="complementary" aria-label="Resultaten uit de pilot">
+          <div class="stat-card">
+            <span class="stat-card__label">Gemiddelde beoordeling</span>
+            <strong class="stat-card__value">4.8/5</strong>
+            <p class="stat-card__note">Gebaseerd op de eerste 120 proefboekingen.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Tijd tot eerste boeking</span>
+            <strong class="stat-card__value">&lt; 24u</strong>
+            <p class="stat-card__note">De meeste tijdsloten worden binnen een dag bevestigd.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="howitworks">
       <div class="container">
         <header class="section__header">
           <h2>Hoe werkt het?</h2>
@@ -93,7 +185,7 @@
       </div>
     </section>
 
-    <section class="section" id="timeslots">
+    <section class="section" id="slots">
       <div class="container">
         <header class="section__header">
           <h2>Voorbeeld tijdsloten</h2>
@@ -111,7 +203,7 @@
             <p class="slot-card__time">Vandaag 18:00–19:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€4</span>
-              <button class="button button--ghost" type="button" data-slot="Basic-Fit Groningen">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="Basic-Fit Groningen">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -125,7 +217,7 @@
             <p class="slot-card__time">Zaterdag 10:00–11:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€6</span>
-              <button class="button button--ghost" type="button" data-slot="Padel Club Utrecht">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="Padel Club Utrecht">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -139,7 +231,7 @@
             <p class="slot-card__time">Zondag 14:00–18:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€15</span>
-              <button class="button button--ghost" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="Wellness Rotterdam">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -153,7 +245,7 @@
             <p class="slot-card__time">Vrijdag 16:00–20:00</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€12</span>
-              <button class="button button--ghost" type="button" data-slot="Thermen Berendonck">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="Thermen Berendonck">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -167,7 +259,7 @@
             <p class="slot-card__time">Dinsdag 07:00–08:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€8</span>
-              <button class="button button--ghost" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="David Lloyd Amsterdam">Boek nu</button>
             </div>
           </article>
           <article class="slot-card">
@@ -181,8 +273,33 @@
             <p class="slot-card__time">Woensdag 19:00–20:30</p>
             <div class="slot-card__footer">
               <span class="slot-card__price">€5</span>
-              <button class="button button--ghost" type="button" data-slot="Squash City Den Haag">Boek nu</button>
+              <button class="button button--outline" type="button" data-slot="Squash City Den Haag">Boek nu</button>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted testimonials" id="stories">
+      <div class="container">
+        <header class="section__header">
+          <h2>Wat eerste gebruikers zeggen</h2>
+          <p>Social proof helpt twijfels weg te nemen. Daarom vragen we iedereen uit de pilot om hun ervaring te delen.</p>
+        </header>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Mijn Basic-Fit abonnement stond half leeg. Nu betaal ik mijn contributie bijna helemaal terug en krijg ik enthousiaste reacties van huurders.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Ruben (abonnementhouder)</span>
+              <span class="testimonial-card__meta">Verdient €42 per maand terug</span>
+            </footer>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Als startende padelspeler wil ik flexibel blijven. Ik kan last minute boeken en weet precies wat het kost.”</p>
+            <footer class="testimonial-card__footer">
+              <span class="testimonial-card__name">Mara (flexsporter)</span>
+              <span class="testimonial-card__meta">Boekte 5 keer in de pilot</span>
+            </footer>
           </article>
         </div>
       </div>
@@ -277,6 +394,20 @@
       </div>
     </section>
 
+    <section class="section cta-banner" aria-label="Laatste call-to-action">
+      <div class="container cta-banner__content">
+        <div>
+          <span class="eyebrow">Nog even checken?</span>
+          <h2>Doe vandaag mee met de SharePass-pilot</h2>
+          <p>Bevestig je interesse en wij sturen je direct een uitnodiging zodra jouw stad live gaat.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+          <a class="button button--outline button--compact" href="#faq">Bekijk FAQ</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section about">
       <div class="container about__content">
         <h2>Over SharePass</h2>
@@ -300,8 +431,8 @@
       <div>
         <h4>Platform</h4>
         <ul>
-          <li><a href="#how-it-works">Hoe werkt het?</a></li>
-          <li><a href="#timeslots">Tijdsloten</a></li>
+          <li><a href="#howitworks">Hoe werkt het?</a></li>
+          <li><a href="#slots">Tijdsloten</a></li>
           <li><a href="#signup">Aanmelden</a></li>
           <li><a href="#faq">Veelgestelde vragen</a></li>
         </ul>
@@ -329,6 +460,14 @@
     </div>
   </footer>
 
+  <div class="floating-cta" data-floating-cta role="complementary" aria-label="Snelle aanmelding">
+    <div class="floating-cta__text">
+      <strong>Doe mee met de pilot</strong>
+      <span>Claim je plek en ontvang updates.</span>
+    </div>
+    <a class="button button--primary button--compact" href="#signup">Aanmelden</a>
+  </div>
+
   <div class="modal" data-booking-modal hidden>
     <div class="modal__overlay" data-booking-overlay></div>
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
@@ -353,6 +492,17 @@
           </div>
         </div>
       </div>
+      <section class="modal__access-demo" aria-label="Voorbeeld toegangscode">
+        <h4 class="modal__demo-title">Toegangscode (demo)</h4>
+        <div class="modal__demo-card">
+          <span class="modal__code-label">Code</span>
+          <span class="modal__code-value">SP-48291</span>
+        </div>
+        <div class="modal__qr" role="img" aria-label="Placeholder voor QR-code">
+          <div class="modal__qr-placeholder"></div>
+        </div>
+        <p class="modal__demo-note">In de echte versie krijg je hier een unieke QR-code of toegangscode die je bij de locatie kunt gebruiken.</p>
+      </section>
       <p class="modal__description">In de echte versie kun je hier direct betalen en een toegangscode ontvangen.</p>
       <button class="button button--primary modal__close" type="button" data-booking-close>Sluiten</button>
     </div>
